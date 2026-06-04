@@ -157,7 +157,7 @@ class ProductionPipeline:
             "backtest_performance": risk_metrics,
             "signal": {
                 "current_spot_price": round(current_close, 2),
-                "predicted_target_price": round(predicted_close, 2),
+                "predicted_target_price": round(predicted_next_close, 2), 
                 "expected_log_return": round(next_log_return_pred, 5),
                 "direction": "BULLISH" if next_log_return_pred > 0 else "BEARISH"
             }
