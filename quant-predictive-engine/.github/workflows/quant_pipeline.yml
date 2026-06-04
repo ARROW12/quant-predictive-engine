@@ -1,0 +1,41 @@
+name: Quant Production Pipeline
+
+on:
+  schedule:
+    # Triggers Monday through Friday at 21:30 UTC (Post market-close settlement)
+    - cron: '30 21 * * 1-5'
+  workflow_dispatch: # Allows instant manual pipeline evaluation execution
+
+jobs:
+  compute-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants the workflow worker permission to write back data updates
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Setup Optimized Python Layer
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install Quant Framework Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements.txt
+
+    - name: Execute Model Fitting & Quant Engine Pipeline
+      run: |
+        python scripts/pipeline.py
+
+    - name: Commit and Push Analytical State Changes
+      run: |
+        git config --global user.name "GitHub Quant Engine Bot"
+        git config --global user.email "quant-bot@users.noreply.github.com"
+        git add data/data.csv data/predictions.json
+        # Only issue a commit if model weights/historical records have dynamically updated
+        git diff-index --quiet HEAD || git commit -m "System Sync: Model Retrained & Data Appended [skip ci]"
+        git push
