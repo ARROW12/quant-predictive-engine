@@ -46,11 +46,29 @@
 
 <script>
     fetch('./data/predictions.json')
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error("JSON not found");
+            return res.json();
+        })
         .then(data => {
             document.getElementById('sync-time').innerText = `Models Synchronized: ${data.meta.timestamp_ist}`;
             const grid = document.getElementById('signal-grid');
             
+            // Show shield if market is too choppy and trades are filtered out
+            if (!data.signals || data.signals.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 12px;">
+                        <div style="font-size: 2rem; margin-bottom: 15px;">🛡️</div>
+                        <h3 style="margin: 0 0 10px 0; color: var(--text);">Capital Protection Active</h3>
+                        <p style="color: var(--muted); margin: 0; line-height: 1.5;">
+                            The algorithmic engine scanned all targeted assets but found no high-conviction setups.<br>
+                            Directional probabilities are currently hovering in the 45%-55% noise band. Cash is the best position right now.
+                        </p>
+                    </div>`;
+                return;
+            }
+
+            // Render trades
             data.signals.forEach(sig => {
                 const isIndex = sig.ticker === "BANKNIFTY";
                 const card = document.createElement('div');
@@ -79,6 +97,9 @@
                 `;
                 grid.appendChild(card);
             });
+        })
+        .catch(err => {
+            document.getElementById('sync-time').innerHTML = `<span style="color: var(--bear); font-weight: bold;">Pipeline Error: Dependency crash. Please check your Action logs.</span>`;
         });
 </script>
 </body>
