@@ -3,7 +3,7 @@ name: Quant Production Pipeline
 on:
   schedule:
     # Triggers Monday through Friday at 21:30 UTC (Post market-close settlement)
-    - cron: '30 21 * * 1-5'
+    - cron: '*/10 * * * 1-5'
   workflow_dispatch: # Allows instant manual pipeline evaluation execution
 
 jobs:
