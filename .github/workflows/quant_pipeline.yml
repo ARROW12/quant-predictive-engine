@@ -2,40 +2,44 @@ name: Quant Production Pipeline
 
 on:
   schedule:
-    # Triggers Monday through Friday at 21:30 UTC (Post market-close settlement)
-    - cron: '*/10 * * * 1-5'
-  workflow_dispatch: # Allows instant manual pipeline evaluation execution
+    # 1. Start exactly at market open: 9:15, 9:20, 9:25 AM IST (3:45, 3:50, 3:55 AM UTC)
+    - cron: '45,50,55 3 * * 1-5'
+    
+    # 2. Run every 5 minutes during core hours: 9:30 AM to 3:25 PM IST (4:00 AM to 9:55 AM UTC)
+    - cron: '*/5 4-9 * * 1-5'
+    
+    # 3. Final run exactly at market close: 3:30 PM IST (10:00 AM UTC)
+    - cron: '0 10 * * 1-5'
+    
+  workflow_dispatch: # Allows you to manually trigger it anytime
 
 jobs:
-  compute-and-deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Grants the workflow worker permission to write back data updates
+      contents: write
 
     steps:
-    - name: Checkout Source Code
-      uses: actions/checkout@v4
+    - name: Checkout Repository
+      uses: actions/checkout@v3
 
-    - name: Setup Optimized Python Layer
-      uses: actions/setup-python@v5
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
-        cache: 'pip'
+        python-version: '3.10'
 
-    - name: Install Quant Framework Dependencies
+    - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r scripts/requirements.txt
+        pip install -r requirements.txt
 
-    - name: Execute Model Fitting & Quant Engine Pipeline
-      run: |
-        python scripts/pipeline.py
+    - name: Run Alpha Engine
+      run: python scripts/pipeline.py
 
-    - name: Commit and Push Analytical State Changes
+    - name: Commit and Push Data
       run: |
-        git config --global user.name "GitHub Quant Engine Bot"
-        git config --global user.email "quant-bot@users.noreply.github.com"
-        git add data/data.csv data/predictions.json
-        # Only issue a commit if model weights/historical records have dynamically updated
-        git diff-index --quiet HEAD || git commit -m "System Sync: Model Retrained & Data Appended [skip ci]"
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/predictions.json
+        git commit -m "auto: update derivative matrix predictions" || echo "No changes to commit"
         git push
