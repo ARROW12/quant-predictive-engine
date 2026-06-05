@@ -13,10 +13,13 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger("DerivativesAlphaEngine")
 
 # Include Bank Nifty along with highly liquid F&O stocks
-TICKERS = ["^NSEBANK", "RELIANCE.NS", "HDFCBANK.NS", "ICICIBANK.NS", "SBIN.NS", "INFY.NS", "TCS.NS"]
+TICKERS = [
+    "^NSEBANK", "RELIANCE.NS", "HDFCBANK.NS", "ICICIBANK.NS", "SBIN.NS", 
+    "INFY.NS", "TCS.NS", "BHARTIARTL.NS", "ITC.NS", "TATAMOTORS.NS", "MARUTI.NS"
+]
 
 class BlackScholesEngine:
-    """Calculates theoretical option premiums, targets, and stops using continuous probability distributions."""
+    """Calculates theoretical option premiums, targets, and stops."""
     @staticmethod
     def calculate_premium(spot: float, strike: float, time_to_expiry: float, risk_free_rate: float, sigma: float, option_type: str) -> float:
         if sigma <= 0 or time_to_expiry <= 0:
@@ -34,26 +37,24 @@ class BlackScholesEngine:
 
 
 class AdvancedFeatureEngineer:
-    """Constructs non-linear, stationary features for classification training."""
+    """Constructs stationary features for classification training."""
     @staticmethod
     def build(df: pd.DataFrame) -> pd.DataFrame:
         df = df.copy()
         df['log_return'] = np.log(df['Close'] / df['Close'].shift(1))
         
-        # Microstructure Volatility Boundaries
         high_low = df['High'] - df['Low']
         high_close = (df['High'] - df['Close'].shift()).abs()
         low_close = (df['Low'] - df['Close'].shift()).abs()
         tr = pd.concat([high_low, high_close, low_close], axis=1).max(axis=1)
         df['atr_14'] = tr.ewm(alpha=1/14, adjust=False).mean()
         
-        # Oscillators & Moving Overlays
         delta = df['Close'].diff()
         gain = (delta.where(delta > 0, 0)).ewm(alpha=1/14, adjust=False).mean()
         loss = (-delta.where(delta < 0, 0)).ewm(alpha=1/14, adjust=False).mean()
         df['rsi_14'] = 100 - (100 / (1 + (gain / (loss + 1e-8))))
         
-        # Classification Target: 1 if cumulative 3-bar forward return is positive, else 0
+        # Target: 1 if 3-bar forward return is positive, else 0
         df['forward_return'] = np.log(df['Close'].shift(-3) / df['Close'])
         df['target'] = (df['forward_return'] > 0).astype(int)
         
@@ -76,22 +77,19 @@ def execute_matrix(ticker: str) -> dict:
     X = processed_df[feature_cols]
     y = processed_df['target']
     
-    # Chronological Split
     split = int(len(processed_df) * 0.8)
     X_train, X_test = X.iloc[:split], X.iloc[split:]
     y_train, y_test = y.iloc[:split], y.iloc[split:]
     
-    # Train Classification Ensemble with High Regularization
     model = HistGradientBoostingClassifier(max_iter=100, learning_rate=0.03, l2_regularization=10.0, random_state=42)
     model.fit(X_train, y_train)
     
-    # Calculate Prediction Probability (Confidence Metric)
     latest_vector = X.iloc[[-1]]
     prob_up = float(model.predict_proba(latest_vector)[0][1])
     
-    # Threshold Verification Layer (Requires strong directional conviction)
+    # Capital Protection: Skip if directional conviction is weak (between 45% and 55%)
     if 0.45 < prob_up < 0.55:
-        logger.info(f"Skipping {ticker}: Insufficient mathematical directional confidence.")
+        logger.info(f"Skipping {ticker}: Insufficient directional confidence.")
         return None
         
     direction = "BULLISH" if prob_up >= 0.55 else "BEARISH"
@@ -99,38 +97,31 @@ def execute_matrix(ticker: str) -> dict:
     
     current_spot = float(processed_df['Close'].iloc[-1])
     
-    # Asset Lot Sizes and Strike Width Rules
+    # Lot sizes and steps
     if ticker == "^NSEBANK":
         strike_step = 100
         lot_size = 15
         display_name = "BANKNIFTY"
     else:
         strike_step = 50 if current_spot > 1000 else 10
-        lot_size = 25 if "BANK" in ticker else 15  # Approximated fallback for stock filters
+        lot_size = 25 if "BANK" in ticker else 15
         display_name = ticker.replace(".NS", "")
         
     atm_strike = int(round(current_spot / strike_step) * strike_step)
     option_type = "CE" if direction == "BULLISH" else "PE"
     
-    # Derive Option Pricing Inputs
-    # Annualized historical standard deviation of log returns used as historical proxy for IV
     historical_iv = float(processed_df['log_return'].tail(375).std() * math.sqrt(252 * 75))
-    time_to_expiry = 3 / 365.0  # Assume an average of 3 days remaining to weekly contracts
-    risk_free_rate = 0.065     # Standard Indian RBI Repo Rate Repo benchmark
+    time_to_expiry = 3 / 365.0 
+    risk_free_rate = 0.065     
     
     theoretical_premium = BlackScholesEngine.calculate_premium(
-        spot=current_spot,
-        strike=atm_strike,
-        time_to_expiry=time_to_expiry,
-        risk_free_rate=risk_free_rate,
-        sigma=historical_iv,
-        option_type=option_type
+        spot=current_spot, strike=atm_strike, time_to_expiry=time_to_expiry,
+        risk_free_rate=risk_free_rate, sigma=historical_iv, option_type=option_type
     )
     
-    # Derivative Execution Levels
     buy_entry_max = theoretical_premium
-    target_exit = buy_entry_max * 1.25  # Mathematically targeted for 25% premium growth
-    stop_loss = buy_entry_max * 0.85    # 15% Max risk parameter per option trade
+    target_exit = buy_entry_max * 1.25  # 25% profit target
+    stop_loss = buy_entry_max * 0.85    # 15% stop loss
     
     return {
         "ticker": display_name,
@@ -166,4 +157,4 @@ if __name__ == "__main__":
     
     with open("data/predictions.json", 'w') as f:
         json.dump(payload, f, indent=4)
-    logger.info("Derivative payload successfully generated.")
+    logger.info("Derivative payload generated.")
