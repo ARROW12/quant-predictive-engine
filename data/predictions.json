@@ -1,43 +1,19 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-05 18:45:06 UTC"
+        "timestamp_ist": "2026-06-05 18:58:01 UTC"
     },
     "signals": [
         {
-            "ticker": "TCS",
-            "spot": 2196.0,
-            "direction": "BULLISH",
-            "contract": "2200 CE",
-            "option_entry": 37.5,
-            "option_target": 46.9,
-            "option_stop": 31.9,
-            "lot_size": 15,
-            "capital_per_lot": 563.2,
-            "confidence": 68.4
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 977.0,
+            "ticker": "RELIANCE",
+            "spot": 1291.5,
             "direction": "BEARISH",
-            "contract": "980 PE",
-            "option_entry": 9.7,
-            "option_target": 12.2,
-            "option_stop": 8.3,
+            "contract": "1300 PE",
+            "option_entry": 13.1,
+            "option_target": 16.3,
+            "option_stop": 11.1,
             "lot_size": 15,
-            "capital_per_lot": 146.2,
-            "confidence": 64.0
-        },
-        {
-            "ticker": "ICICIBANK",
-            "spot": 1260.3,
-            "direction": "BULLISH",
-            "contract": "1250 CE",
-            "option_entry": 15.9,
-            "option_target": 19.8,
-            "option_stop": 13.5,
-            "lot_size": 25,
-            "capital_per_lot": 396.64,
-            "confidence": 60.9
+            "capital_per_lot": 195.8,
+            "confidence": 78.0
         },
         {
             "ticker": "INFY",
@@ -49,19 +25,55 @@
             "option_stop": 15.2,
             "lot_size": 15,
             "capital_per_lot": 268.21,
-            "confidence": 60.9
+            "confidence": 74.6
         },
         {
-            "ticker": "RELIANCE",
-            "spot": 1291.5,
+            "ticker": "HDFCBANK",
+            "spot": 748.0,
             "direction": "BEARISH",
-            "contract": "1300 PE",
-            "option_entry": 13.1,
-            "option_target": 16.3,
-            "option_stop": 11.1,
+            "contract": "750 PE",
+            "option_entry": 6.5,
+            "option_target": 8.2,
+            "option_stop": 5.6,
+            "lot_size": 25,
+            "capital_per_lot": 163.59,
+            "confidence": 71.0
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2196.0,
+            "direction": "BULLISH",
+            "contract": "2200 CE",
+            "option_entry": 37.5,
+            "option_target": 46.9,
+            "option_stop": 31.9,
             "lot_size": 15,
-            "capital_per_lot": 195.8,
-            "confidence": 59.4
+            "capital_per_lot": 563.2,
+            "confidence": 64.5
+        },
+        {
+            "ticker": "ITC",
+            "spot": 280.95,
+            "direction": "BEARISH",
+            "contract": "280 PE",
+            "option_entry": 1.6,
+            "option_target": 2.1,
+            "option_stop": 1.4,
+            "lot_size": 15,
+            "capital_per_lot": 24.7,
+            "confidence": 63.4
+        },
+        {
+            "ticker": "BHARTIARTL",
+            "spot": 1796.0,
+            "direction": "BULLISH",
+            "contract": "1800 CE",
+            "option_entry": 10.9,
+            "option_target": 13.6,
+            "option_stop": 9.2,
+            "lot_size": 15,
+            "capital_per_lot": 163.0,
+            "confidence": 63.1
         },
         {
             "ticker": "BANKNIFTY",
@@ -73,19 +85,19 @@
             "option_stop": 290.3,
             "lot_size": 15,
             "capital_per_lot": 5122.56,
-            "confidence": 59.1
+            "confidence": 61.2
         },
         {
-            "ticker": "HDFCBANK",
-            "spot": 748.0,
-            "direction": "BULLISH",
-            "contract": "750 CE",
-            "option_entry": 4.9,
-            "option_target": 6.2,
-            "option_stop": 4.2,
-            "lot_size": 25,
-            "capital_per_lot": 123.6,
-            "confidence": 55.2
+            "ticker": "SBIN",
+            "spot": 977.0,
+            "direction": "BEARISH",
+            "contract": "980 PE",
+            "option_entry": 9.7,
+            "option_target": 12.2,
+            "option_stop": 8.3,
+            "lot_size": 15,
+            "capital_per_lot": 146.2,
+            "confidence": 60.7
         }
     ]
 }
