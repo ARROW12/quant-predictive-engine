@@ -3,92 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional Derivatives Terminal</title>
+    <title>High-Conviction Derivatives Terminal</title>
     <style>
-        :root { --bg: #070a13; --surface: #0f1424; --border: #1e293b; --text-main: #f8fafc; --text-muted: #94a3b8; --bull: #10b981; --bear: #f43f5e; --accent: #3b82f6; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text-main); margin: 0; padding: 40px 20px; }
-        .wrapper { max-width: 1300px; margin: 0 auto; }
-        header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 24px; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; }
-        .timestamp { color: var(--text-muted); font-size: 0.85rem; margin-top: 4px; }
-        .stats-summary { display: flex; gap: 16px; margin-bottom: 24px; }
-        .stat-badge { background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
-        .stat-badge strong { color: var(--text-main); }
-        .terminal-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        th, td { padding: 16px 20px; text-align: left; font-size: 0.875rem; border-bottom: 1px solid var(--border); }
-        th { background: #151c33; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.07em; }
-        tr:last-child td { border-bottom: none; }
-        tr:hover td { background: rgba(255,255,255,0.015); }
-        .badge { padding: 4px 8px; border-radius: 4px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em; }
-        .BULLISH { background: rgba(16, 185, 129, 0.12); color: var(--bull); }
-        .BEARISH { background: rgba(244, 63, 94, 0.12); color: var(--bear); }
-        .contract-box { font-family: "SFMono-Regular", Consolas, monospace; background: rgba(59, 130, 246, 0.12); color: var(--accent); padding: 4px 8px; border-radius: 4px; font-weight: 700; border: 1px solid rgba(59, 130, 246, 0.2); }
-        .green-txt { color: var(--bull); font-weight: 600; }
-        .red-txt { color: var(--bear); font-weight: 600; }
-        .indicator-micro { font-size: 0.75rem; color: var(--text-muted); }
+        :root { --bg: #060814; --surface: #0e1326; --border: #1e293b; --text: #f8fafc; --muted: #64748b; --bull: #10b981; --bear: #f43f5e; --accent: #2563eb; }
+        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; margin: 0; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
+        h1 { margin: 0; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
+        .time { color: var(--muted); font-size: 0.85rem; margin-top: 5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; }
+        .card.index-card { border: 2px solid #3b82f6; background: linear-gradient(145deg, #0e1326 0%, #111c3a 100%); }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .ticker { font-size: 1.4rem; font-weight: 800; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+        .BULLISH { background: rgba(16, 185, 129, 0.15); color: var(--bull); }
+        .BEARISH { background: rgba(244, 63, 94, 0.15); color: var(--bear); }
+        .contract-title { font-family: monospace; font-size: 1.1rem; color: #60a5fa; font-weight: 700; background: rgba(59, 130, 246, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; margin-bottom: 15px; }
+        .metric-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+        .metric-row:last-of-type { border-bottom: none; }
+        .metric-row span { color: var(--muted); }
+        .ticket-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 12px; margin-top: 15px; border-left: 4px solid var(--accent); }
+        .ticket-box.BULLISH-left { border-left-color: var(--bull); }
+        .ticket-box.BEARISH-left { border-left-color: var(--bear); }
+        .highlight { font-weight: 700; }
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="container">
     <header>
         <div>
-            <h1>NSE Options Alpha Engine v3.0</h1>
-            <div class="timestamp" id="execution-time">Ingesting data arrays...</div>
+            <h1>F&O Probability Matrix</h1>
+            <div class="time" id="sync-time">Validating temporal trends...</div>
         </div>
-        <div class="stats-summary">
-            <div class="stat-badge">Horizon: <strong>15 Min Runways</strong></div>
-            <div class="stat-badge">Target Options ROI: <strong style="color: var(--bull);">20%+ Delta-Surge</strong></div>
+        <div style="font-weight: 700; color: var(--bull); font-size: 0.9rem; background: rgba(16,185,129,0.1); padding: 8px 16px; border-radius: 8px;">
+            Target Parameter: +25% Premium Growth
         </div>
     </header>
 
-    <table class="terminal-table">
-        <thead>
-            <tr>
-                <th>Asset Ticker</th>
-                <th>Spot Price</th>
-                <th>Directional Bias</th>
-                <th>Target ATM Derivative</th>
-                <th>Trigger Entry Price</th>
-                <th>Take-Profit Target</th>
-                <th>Hard Stop-Loss</th>
-                <th>Technical Context</th>
-                <th>Backtest Verification</th>
-            </tr>
-        </thead>
-        <tbody id="matrix-rows">
-            </tbody>
-    </table>
+    <div class="grid" id="signal-grid"></div>
 </div>
 
 <script>
     fetch('./data/predictions.json')
-        .then(response => response.json())
-        .then(payload => {
-            document.getElementById('execution-time').innerText = `Matrix State Synchronized: ${payload.meta.last_updated_utc}`;
-            const container = document.getElementById('matrix-rows');
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById('sync-time').innerText = `Models Synchronized: ${data.meta.timestamp_ist}`;
+            const grid = document.getElementById('signal-grid');
             
-            payload.portfolio.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td><strong>${row.ticker}</strong></td>
-                    <td>₹${row.spot}</td>
-                    <td><span class="badge ${row.direction}">${row.direction}</span></td>
-                    <td><span class="contract-box">${row.contract}</span></td>
-                    <td>₹${row.entry}</td>
-                    <td class="green-txt">₹${row.target}</td>
-                    <td class="red-txt">₹${row.stop_loss}</td>
-                    <td>
-                        <div class="indicator-micro">RSI(14): <strong>${row.rsi}</strong></div>
-                        <div class="indicator-micro" style="margin-top:2px;">ATR: <strong>₹${row.atr}</strong></div>
-                    </td>
-                    <td>
-                        <div style="font-weight:700; color: ${row.confidence >= 50 ? 'var(--bull)' : 'var(--text-muted)'}">${row.confidence}% Direction Match</div>
-                    </td>
+            data.signals.forEach(sig => {
+                const isIndex = sig.ticker === "BANKNIFTY";
+                const card = document.createElement('div');
+                card.className = `card ${isIndex ? 'index-card' : ''}`;
+                
+                card.innerHTML = `
+                    <div class="card-header">
+                        <span class="ticker">${sig.ticker} ${isIndex ? '📊' : ''}</span>
+                        <span class="badge ${sig.direction}">${sig.direction} (${sig.confidence}%)</span>
+                    </div>
+                    <div>Underlying Spot: <strong>₹${sig.spot}</strong></div>
+                    <div style="margin-top: 12px;"><span class="contract-title">${sig.contract}</span></div>
+                    
+                    <div class="metric-row"><span>Max Entry Price (Premium):</span> <span class="highlight" style="color: var(--text);">₹${sig.option_entry}</span></div>
+                    <div class="metric-row"><span>Target Exit Price (+25%):</span> <span class="highlight" style="color: var(--bull);">₹${sig.option_target}</span></div>
+                    <div class="metric-row"><span>Hard Protection Stop (-15%):</span> <span class="highlight" style="color: var(--bear);">₹${sig.option_stop}</span></div>
+                    <div class="metric-row"><span>Contract Lot Size:</span> <span class="highlight">${sig.lot_size} units</span></div>
+                    
+                    <div class="ticket-box ${sig.direction}-left">
+                        <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight:700;">Execution Action Ticket</div>
+                        <div style="font-size: 0.85rem; margin-top: 4px; line-height: 1.4;">
+                            Buy 1 Lot of ${sig.contract} if premium is at or below <strong style="color: var(--bull);">₹${sig.option_entry}</strong>. 
+                            Required capital layout is approximately <strong>₹${sig.capital_per_lot}</strong>.
+                        </div>
+                    </div>
                 `;
-                container.appendChild(tr);
+                grid.appendChild(card);
             });
-        }).catch(err => {
-            document.getElementById('execution-time').innerText = "Critical Fault: Unable to load localized analytics payload.";
         });
 </script>
 </body>
