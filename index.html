@@ -11,22 +11,18 @@
         header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
         h1 { margin: 0; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
         .time { color: var(--muted); font-size: 0.85rem; margin-top: 5px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; position: relative; overflow: hidden; }
-        .card.index-card { border: 2px solid #3b82f6; background: linear-gradient(145deg, #0e1326 0%, #111c3a 100%); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .card.index-card { border: 2px solid #3b82f6; }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
         .ticker { font-size: 1.4rem; font-weight: 800; }
         .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
         .BULLISH { background: rgba(16, 185, 129, 0.15); color: var(--bull); }
         .BEARISH { background: rgba(244, 63, 94, 0.15); color: var(--bear); }
-        .contract-title { font-family: monospace; font-size: 1.1rem; color: #60a5fa; font-weight: 700; background: rgba(59, 130, 246, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; margin-bottom: 15px; }
-        .metric-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
-        .metric-row:last-of-type { border-bottom: none; }
-        .metric-row span { color: var(--muted); }
-        .ticket-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 12px; margin-top: 15px; border-left: 4px solid var(--accent); }
-        .ticket-box.BULLISH-left { border-left-color: var(--bull); }
-        .ticket-box.BEARISH-left { border-left-color: var(--bear); }
-        .highlight { font-weight: 700; }
+        .contract-title { font-family: monospace; font-size: 1.1rem; color: #60a5fa; font-weight: 700; background: rgba(59, 130, 246, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; margin-bottom: 10px; }
+        .execution-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 15px; margin-top: 15px; border-left: 4px solid var(--accent); font-size: 0.85rem; }
+        .metric-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.85rem; color: var(--muted); }
+        .profit-pos { color: var(--bull); font-weight: 700; }
     </style>
 </head>
 <body>
@@ -37,69 +33,50 @@
             <div class="time" id="sync-time">Validating temporal trends...</div>
         </div>
         <div style="font-weight: 700; color: var(--bull); font-size: 0.9rem; background: rgba(16,185,129,0.1); padding: 8px 16px; border-radius: 8px;">
-            Target Parameter: +25% Premium Growth
+            Target: Net Profit ≥ ₹2,000
         </div>
     </header>
-
     <div class="grid" id="signal-grid"></div>
 </div>
 
 <script>
     fetch('./data/predictions.json')
-        .then(res => {
-            if (!res.ok) throw new Error("JSON not found");
-            return res.json();
-        })
+        .then(res => res.json())
         .then(data => {
             document.getElementById('sync-time').innerText = `Models Synchronized: ${data.meta.timestamp_ist}`;
             const grid = document.getElementById('signal-grid');
             
-            // Show shield if market is too choppy and trades are filtered out
-            if (!data.signals || data.signals.length === 0) {
-                grid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 50px 20px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border); border-radius: 12px;">
-                        <div style="font-size: 2rem; margin-bottom: 15px;">🛡️</div>
-                        <h3 style="margin: 0 0 10px 0; color: var(--text);">Capital Protection Active</h3>
-                        <p style="color: var(--muted); margin: 0; line-height: 1.5;">
-                            The algorithmic engine scanned all targeted assets but found no high-conviction setups.<br>
-                            Directional probabilities are currently hovering in the 45%-55% noise band. Cash is the best position right now.
-                        </p>
-                    </div>`;
-                return;
-            }
-
-            // Render trades
             data.signals.forEach(sig => {
                 const isIndex = sig.ticker === "BANKNIFTY";
+                const plan = sig.execution_plan;
+                const isProfitable = plan.net_profit >= 2000;
+                
                 const card = document.createElement('div');
                 card.className = `card ${isIndex ? 'index-card' : ''}`;
-                
                 card.innerHTML = `
                     <div class="card-header">
-                        <span class="ticker">${sig.ticker} ${isIndex ? '📊' : ''}</span>
+                        <span class="ticker">${sig.ticker}</span>
                         <span class="badge ${sig.direction}">${sig.direction} (${sig.confidence}%)</span>
                     </div>
-                    <div>Underlying Spot: <strong>₹${sig.spot}</strong></div>
-                    <div style="margin-top: 12px;"><span class="contract-title">${sig.contract}</span></div>
+                    <div class="contract-title">${sig.contract}</div>
                     
-                    <div class="metric-row"><span>Max Entry Price (Premium):</span> <span class="highlight" style="color: var(--text);">₹${sig.option_entry}</span></div>
-                    <div class="metric-row"><span>Target Exit Price (+25%):</span> <span class="highlight" style="color: var(--bull);">₹${sig.option_target}</span></div>
-                    <div class="metric-row"><span>Hard Protection Stop (-15%):</span> <span class="highlight" style="color: var(--bear);">₹${sig.option_stop}</span></div>
-                    <div class="metric-row"><span>Contract Lot Size:</span> <span class="highlight">${sig.lot_size} units</span></div>
+                    <div class="execution-box" style="border-left-color: ${isProfitable ? 'var(--bull)' : 'var(--bear)'};">
+                        <div style="font-weight: 700; margin-bottom: 8px;">INDmoney Execution Plan</div>
+                        <div class="metric-row"><span>Lots to Trade:</span> <span>${plan.required_lots}</span></div>
+                        <div class="metric-row"><span>Capital Layout:</span> <span>₹${plan.capital_required}</span></div>
+                        <div class="metric-row"><span>Estimated Fees:</span> <span>₹${plan.total_taxes_fees}</span></div>
+                        <div class="metric-row"><span>Net Profit (Target 10%):</span> <span class="profit-pos">₹${plan.net_profit}</span></div>
+                    </div>
                     
-                    <div class="ticket-box ${sig.direction}-left">
-                        <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight:700;">Execution Action Ticket</div>
-                        <div style="font-size: 0.85rem; margin-top: 4px; line-height: 1.4;">
-                            Buy 1 Lot of ${sig.contract} if premium is at or below <strong style="color: var(--bull);">₹${sig.option_entry}</strong>. 
-                            Required capital layout is approximately <strong>₹${sig.capital_per_lot}</strong>.
-                        </div>
+                    <div style="margin-top: 15px; font-size: 0.8rem; color: var(--muted);">
+                        Entry: ₹${sig.option_entry} | Target: ₹${sig.option_target} | Stop: ₹${sig.option_stop}
                     </div>
                 `;
                 grid.appendChild(card);
             });
         })
         .catch(err => {
-            document.getElementById('sync-time').innerHTML = `<span style="color: var(--bear); font-weight: bold;">Pipeline Error: Dependency crash. Please check your Action logs.</span>`;
+            document.getElementById('sync-time').innerHTML = `<span style="color: var(--bear);">Pipeline data unavailable.</span>`;
         });
 </script>
 </body>
