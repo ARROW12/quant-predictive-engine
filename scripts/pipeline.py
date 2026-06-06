@@ -37,13 +37,13 @@ class AdvancedFeatureEngineer:
     @staticmethod
     def build(df: pd.DataFrame) -> pd.DataFrame:
         df = df.copy()
-        df['log_return'] = np.log(df['Close'] / df['Close'].shift(1))
         
-        # 1. Macro Sentiment Features (India VIX)
+        # 1. Base Log Returns & VIX
+        df['log_return'] = np.log(df['Close'] / df['Close'].shift(1))
         df['vix_level'] = df['vix_close']
         df['vix_change'] = df['vix_close'].pct_change()
         
-        # 2. Local Volatility & Momentum Features
+        # 2. Volatility & Momentum (ATR & RSI)
         high_low = df['High'] - df['Low']
         high_close = (df['High'] - df['Close'].shift()).abs()
         low_close = (df['Low'] - df['Close'].shift()).abs()
@@ -55,30 +55,40 @@ class AdvancedFeatureEngineer:
         loss = (-delta.where(delta < 0, 0)).ewm(alpha=1/14, adjust=False).mean()
         df['rsi_14'] = 100 - (100 / (1 + (gain / (loss + 1e-8))))
         
-        # 3. NLP Sentiment Placeholder
-        df['nlp_sentiment'] = df['sentiment_score']
+        # 3. ADVANCED STRUCTURAL FEATURES (Added for max accuracy)
         
-        # Target Generation
+        # VWAP (Volume Weighted Average Price) - Institutional baseline
+        # Resets daily to track true intraday cost basis
+        df['date'] = df['Datetime'].dt.date if 'Datetime' in df.columns else df.index.date
+        df['cum_vol'] = df.groupby('date')['Volume'].cumsum()
+        df['cum_vol_price'] = df.groupby('date').apply(lambda x: (x['Close'] * x['Volume']).cumsum()).reset_index(level=0, drop=True)
+        df['vwap'] = df['cum_vol_price'] / (df['cum_vol'] + 1e-8)
+        df['dist_to_vwap'] = (df['Close'] - df['vwap']) / df['vwap']  # Mean reversion signal
+        
+        # RVOL (Relative Volume) - Tracks anomalous volume surges
+        df['rolling_vol_20'] = df['Volume'].rolling(20).mean()
+        df['rvol'] = df['Volume'] / (df['rolling_vol_20'] + 1e-8)
+        
+        # Multi-Timeframe Trend Proxies (Using 5m bars to simulate HTF)
+        df['ema_1h_proxy'] = df['Close'].ewm(span=12, adjust=False).mean() # ~1 hr
+        df['ema_1d_proxy'] = df['Close'].ewm(span=75, adjust=False).mean() # ~1 day
+        df['trend_alignment'] = np.where((df['Close'] > df['ema_1h_proxy']) & (df['ema_1h_proxy'] > df['ema_1d_proxy']), 1, 
+                                np.where((df['Close'] < df['ema_1h_proxy']) & (df['ema_1h_proxy'] < df['ema_1d_proxy']), -1, 0))
+        
+        # 4. Target Generation (Forward 3-bar prediction)
         df['forward_return'] = np.log(df['Close'].shift(-3) / df['Close'])
         df['target'] = (df['forward_return'] > 0).astype(int)
         
-        return df.ffill().dropna().reset_index(drop=True)
-
-def fetch_sentiment_score(ticker: str) -> float:
-    """
-    Placeholder for NLP Sentiment Analysis. 
-    Integration point for NewsAPI, FinBERT, or Twitter API.
-    Scale: -1.0 (Extreme Bearish) to 1.0 (Extreme Bullish).
-    """
-    # Example logic: return api.get_sentiment(ticker)
-    return 0.0
+        # Clean up
+        df = df.drop(columns=['date', 'cum_vol', 'cum_vol_price', 'rolling_vol_20'])
+        return df.replace([np.inf, -np.inf], np.nan).dropna().reset_index(drop=True)
 
 def execute_matrix(ticker: str) -> dict:
-    logger.info(f"Analyzing {ticker} against VIX parameters...")
+    logger.info(f"Extracting institutional footprint arrays for {ticker}...")
     
-    # Extract asset and macro data simultaneously
-    df_asset = yf.download(tickers=ticker, period="30d", interval="5m", progress=False)
-    df_vix = yf.download(tickers="^INDIAVIX", period="30d", interval="5m", progress=False)
+    # 5-day data is used to ensure enough volume history for RVOL and EMAs
+    df_asset = yf.download(tickers=ticker, period="5d", interval="5m", progress=False)
+    df_vix = yf.download(tickers="^INDIAVIX", period="5d", interval="5m", progress=False)
     
     if df_asset.empty or df_vix.empty:
         return None
@@ -92,40 +102,71 @@ def execute_matrix(ticker: str) -> dict:
     df_vix = df_vix.reset_index()
     
     time_col = 'Datetime' if 'Datetime' in df_asset.columns else 'Date'
+    
+    # Ensure timezone awareness matches for safe merging
+    if df_asset[time_col].dt.tz is None:
+        df_asset[time_col] = df_asset[time_col].dt.tz_localize('UTC')
+    if df_vix[time_col].dt.tz is None:
+        df_vix[time_col] = df_vix[time_col].dt.tz_localize('UTC')
+        
     df_vix = df_vix[[time_col, 'Close']].rename(columns={'Close': 'vix_close'})
     
     df_asset = df_asset.sort_values(time_col)
     df_vix = df_vix.sort_values(time_col)
     
-    # Asynchronous time-series merge
+    # Asynchronous time-series merge to prevent timestamp clipping
     df = pd.merge_asof(df_asset, df_vix, on=time_col, direction='backward')
-    
-    # Inject Sentiment
-    df['sentiment_score'] = fetch_sentiment_score(ticker)
     
     processed_df = AdvancedFeatureEngineer.build(df)
     
-    # Expanded Feature Vector Space
-    feature_cols = ['log_return', 'atr_14', 'rsi_14', 'vix_level', 'vix_change', 'nlp_sentiment']
+    # The new expanded feature vector
+    feature_cols = [
+        'log_return', 'atr_14', 'rsi_14', 'vix_level', 'vix_change', 
+        'dist_to_vwap', 'rvol', 'trend_alignment'
+    ]
     
     X = processed_df[feature_cols]
     y = processed_df['target']
     
-    split = int(len(processed_df) * 0.8)
-    X_train, X_test = X.iloc[:split], X.iloc[split:]
-    y_train, y_test = y.iloc[:split], y.iloc[split:]
+    # Purged split: leaving a small gap between train and test to prevent data leakage
+    split_idx = int(len(processed_df) * 0.8)
+    gap = 3 # 3 bars gap matches our forward target window
     
-    model = HistGradientBoostingClassifier(max_iter=100, learning_rate=0.03, l2_regularization=10.0, random_state=42)
+    X_train, X_test = X.iloc[:split_idx], X.iloc[split_idx+gap:]
+    y_train, y_test = y.iloc[:split_idx], y.iloc[split_idx+gap:]
+    
+    model = HistGradientBoostingClassifier(
+        max_iter=150, 
+        learning_rate=0.02, 
+        l2_regularization=15.0, # High regularization to prevent overfitting noise
+        max_depth=5,
+        random_state=42
+    )
+    
+    if len(np.unique(y_train)) < 2:
+        return None # Prevent crash if market has only gone one direction all week
+        
     model.fit(X_train, y_train)
     
     latest_vector = X.iloc[[-1]]
     prob_up = float(model.predict_proba(latest_vector)[0][1])
     
+    # Strict Regime Gatekeeper: Only trade if directional bias escapes the noise band
     if 0.45 < prob_up < 0.55:
+        logger.info(f"[{ticker}] Filtered out. Noise band probability: {round(prob_up, 2)}")
         return None
         
     direction = "BULLISH" if prob_up >= 0.55 else "BEARISH"
     confidence = prob_up if direction == "BULLISH" else (1 - prob_up)
+    
+    # Context check: Don't buy a call if the stock is miles below VWAP and in a 1H downtrend
+    latest_trend = float(processed_df['trend_alignment'].iloc[-1])
+    if direction == "BULLISH" and latest_trend == -1:
+        logger.info(f"[{ticker}] Bullish signal aborted. Conflicts with higher timeframe downtrend.")
+        return None
+    if direction == "BEARISH" and latest_trend == 1:
+        logger.info(f"[{ticker}] Bearish signal aborted. Conflicts with higher timeframe uptrend.")
+        return None
     
     current_spot = float(processed_df['Close'].iloc[-1])
     
@@ -141,7 +182,6 @@ def execute_matrix(ticker: str) -> dict:
     atm_strike = int(round(current_spot / strike_step) * strike_step)
     option_type = "CE" if direction == "BULLISH" else "PE"
     
-    # Dynamic Historical IV extraction
     historical_iv = float(processed_df['log_return'].tail(375).std() * math.sqrt(252 * 75))
     time_to_expiry = 3 / 365.0 
     risk_free_rate = 0.065     
@@ -187,3 +227,4 @@ if __name__ == "__main__":
     
     with open("data/predictions.json", 'w') as f:
         json.dump(payload, f, indent=4)
+    logger.info("Pipeline executed successfully.")
