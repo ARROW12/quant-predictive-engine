@@ -17,6 +17,50 @@ TICKERS = [
     "INFY.NS", "TCS.NS", "BHARTIARTL.NS", "ITC.NS", "TATAMOTORS.NS", "MARUTI.NS"
 ]
 
+class INDmoneyCalculator:
+    """
+    Calculates exact F&O taxation and brokerage specific to INDmoney
+    including the updated 2026 Budget STT hikes (0.15% on options).
+    """
+    @staticmethod
+    def calculate_execution_plan(entry_price: float, lot_size: int, target_net_profit: float = 2000.0, target_move_pct: float = 0.10) -> dict:
+        sell_price = entry_price * (1 + target_move_pct)
+        
+        lots = 1
+        while True:
+            qty = lots * lot_size
+            buy_turnover = entry_price * qty
+            sell_turnover = sell_price * qty
+            total_turnover = buy_turnover + sell_turnover
+            
+            gross_profit = sell_turnover - buy_turnover
+            
+            # INDmoney & Indian Regulatory fee structure (Current as of 2026)
+            brokerage = 40.0  # ₹20 Buy + ₹20 Sell
+            stt = sell_turnover * 0.0015  # 0.15% on sell side premium
+            exchange_txn = total_turnover * 0.0003503  # NSE Exchange Txn
+            sebi_charges = total_turnover * 0.000001  # 0.0001%
+            stamp_duty = buy_turnover * 0.00003  # 0.003% on buy side
+            gst = (brokerage + exchange_txn + sebi_charges) * 0.18
+            
+            total_deductions = brokerage + stt + exchange_txn + sebi_charges + stamp_duty + gst
+            net_profit = gross_profit - total_deductions
+            
+            # Stop adding lots once we clear the net target
+            if net_profit >= target_net_profit:
+                return {
+                    "required_lots": lots,
+                    "required_qty": qty,
+                    "capital_required": round(buy_turnover, 2),
+                    "gross_profit": round(gross_profit, 2),
+                    "total_taxes_fees": round(total_deductions, 2),
+                    "net_profit": round(net_profit, 2)
+                }
+            lots += 1
+            if lots > 1000: # Safety break to prevent infinite loops on deep OTMs
+                break
+        return {}
+
 class BlackScholesEngine:
     @staticmethod
     def calculate_premium(spot: float, strike: float, time_to_expiry: float, risk_free_rate: float, sigma: float, option_type: str) -> float:
@@ -55,23 +99,18 @@ class AdvancedFeatureEngineer:
         loss = (-delta.where(delta < 0, 0)).ewm(alpha=1/14, adjust=False).mean()
         df['rsi_14'] = 100 - (100 / (1 + (gain / (loss + 1e-8))))
         
-        # 3. ADVANCED STRUCTURAL FEATURES (Added for max accuracy)
-        
-        # VWAP (Volume Weighted Average Price) - Institutional baseline
-        # Resets daily to track true intraday cost basis
+        # 3. ADVANCED STRUCTURAL FEATURES
         df['date'] = df['Datetime'].dt.date if 'Datetime' in df.columns else df.index.date
         df['cum_vol'] = df.groupby('date')['Volume'].cumsum()
         df['cum_vol_price'] = df.groupby('date').apply(lambda x: (x['Close'] * x['Volume']).cumsum()).reset_index(level=0, drop=True)
         df['vwap'] = df['cum_vol_price'] / (df['cum_vol'] + 1e-8)
-        df['dist_to_vwap'] = (df['Close'] - df['vwap']) / df['vwap']  # Mean reversion signal
+        df['dist_to_vwap'] = (df['Close'] - df['vwap']) / df['vwap']
         
-        # RVOL (Relative Volume) - Tracks anomalous volume surges
         df['rolling_vol_20'] = df['Volume'].rolling(20).mean()
         df['rvol'] = df['Volume'] / (df['rolling_vol_20'] + 1e-8)
         
-        # Multi-Timeframe Trend Proxies (Using 5m bars to simulate HTF)
-        df['ema_1h_proxy'] = df['Close'].ewm(span=12, adjust=False).mean() # ~1 hr
-        df['ema_1d_proxy'] = df['Close'].ewm(span=75, adjust=False).mean() # ~1 day
+        df['ema_1h_proxy'] = df['Close'].ewm(span=12, adjust=False).mean() 
+        df['ema_1d_proxy'] = df['Close'].ewm(span=75, adjust=False).mean() 
         df['trend_alignment'] = np.where((df['Close'] > df['ema_1h_proxy']) & (df['ema_1h_proxy'] > df['ema_1d_proxy']), 1, 
                                 np.where((df['Close'] < df['ema_1h_proxy']) & (df['ema_1h_proxy'] < df['ema_1d_proxy']), -1, 0))
         
@@ -79,14 +118,12 @@ class AdvancedFeatureEngineer:
         df['forward_return'] = np.log(df['Close'].shift(-3) / df['Close'])
         df['target'] = (df['forward_return'] > 0).astype(int)
         
-        # Clean up
         df = df.drop(columns=['date', 'cum_vol', 'cum_vol_price', 'rolling_vol_20'])
         return df.replace([np.inf, -np.inf], np.nan).dropna().reset_index(drop=True)
 
 def execute_matrix(ticker: str) -> dict:
     logger.info(f"Extracting institutional footprint arrays for {ticker}...")
     
-    # 5-day data is used to ensure enough volume history for RVOL and EMAs
     df_asset = yf.download(tickers=ticker, period="5d", interval="5m", progress=False)
     df_vix = yf.download(tickers="^INDIAVIX", period="5d", interval="5m", progress=False)
     
@@ -103,7 +140,6 @@ def execute_matrix(ticker: str) -> dict:
     
     time_col = 'Datetime' if 'Datetime' in df_asset.columns else 'Date'
     
-    # Ensure timezone awareness matches for safe merging
     if df_asset[time_col].dt.tz is None:
         df_asset[time_col] = df_asset[time_col].dt.tz_localize('UTC')
     if df_vix[time_col].dt.tz is None:
@@ -114,12 +150,10 @@ def execute_matrix(ticker: str) -> dict:
     df_asset = df_asset.sort_values(time_col)
     df_vix = df_vix.sort_values(time_col)
     
-    # Asynchronous time-series merge to prevent timestamp clipping
     df = pd.merge_asof(df_asset, df_vix, on=time_col, direction='backward')
     
     processed_df = AdvancedFeatureEngineer.build(df)
     
-    # The new expanded feature vector
     feature_cols = [
         'log_return', 'atr_14', 'rsi_14', 'vix_level', 'vix_change', 
         'dist_to_vwap', 'rvol', 'trend_alignment'
@@ -128,9 +162,8 @@ def execute_matrix(ticker: str) -> dict:
     X = processed_df[feature_cols]
     y = processed_df['target']
     
-    # Purged split: leaving a small gap between train and test to prevent data leakage
     split_idx = int(len(processed_df) * 0.8)
-    gap = 3 # 3 bars gap matches our forward target window
+    gap = 3 
     
     X_train, X_test = X.iloc[:split_idx], X.iloc[split_idx+gap:]
     y_train, y_test = y.iloc[:split_idx], y.iloc[split_idx+gap:]
@@ -138,20 +171,19 @@ def execute_matrix(ticker: str) -> dict:
     model = HistGradientBoostingClassifier(
         max_iter=150, 
         learning_rate=0.02, 
-        l2_regularization=15.0, # High regularization to prevent overfitting noise
+        l2_regularization=15.0, 
         max_depth=5,
         random_state=42
     )
     
     if len(np.unique(y_train)) < 2:
-        return None # Prevent crash if market has only gone one direction all week
+        return None 
         
     model.fit(X_train, y_train)
     
     latest_vector = X.iloc[[-1]]
     prob_up = float(model.predict_proba(latest_vector)[0][1])
     
-    # Strict Regime Gatekeeper: Only trade if directional bias escapes the noise band
     if 0.45 < prob_up < 0.55:
         logger.info(f"[{ticker}] Filtered out. Noise band probability: {round(prob_up, 2)}")
         return None
@@ -159,7 +191,6 @@ def execute_matrix(ticker: str) -> dict:
     direction = "BULLISH" if prob_up >= 0.55 else "BEARISH"
     confidence = prob_up if direction == "BULLISH" else (1 - prob_up)
     
-    # Context check: Don't buy a call if the stock is miles below VWAP and in a 1H downtrend
     latest_trend = float(processed_df['trend_alignment'].iloc[-1])
     if direction == "BULLISH" and latest_trend == -1:
         logger.info(f"[{ticker}] Bullish signal aborted. Conflicts with higher timeframe downtrend.")
@@ -193,17 +224,19 @@ def execute_matrix(ticker: str) -> dict:
     
     buy_entry_max = theoretical_premium
     
+    # Trigger the new internal calculator
+    indmoney_plan = INDmoneyCalculator.calculate_execution_plan(entry_price=buy_entry_max, lot_size=lot_size)
+    
     return {
         "ticker": display_name,
         "spot": round(current_spot, 2),
         "direction": direction,
         "contract": f"{atm_strike} {option_type}",
+        "confidence": round(confidence * 100, 1),
         "option_entry": round(buy_entry_max, 1),
-        "option_target": round(buy_entry_max * 1.25, 1),
+        "option_target": round(buy_entry_max * 1.10, 1), # Adjusted to lock in 10% target
         "option_stop": round(buy_entry_max * 0.85, 1),
-        "lot_size": lot_size,
-        "capital_per_lot": round(buy_entry_max * lot_size, 2),
-        "confidence": round(confidence * 100, 1)
+        "execution_plan": indmoney_plan # Output exact required sizing directly to the JSON
     }
 
 if __name__ == "__main__":
