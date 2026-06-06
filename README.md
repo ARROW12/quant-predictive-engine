@@ -15,16 +15,19 @@ The engine functions as an end-to-end automated quantitative pipeline running en
        │
        ├──► 1. Pulls 5m Intraday Data (yfinance) for Target Assets & ^INDIAVIX
        ├──► 2. Synchronizes time-series via As-Of Temporal Merging
-       ├──► 3. Features Engineered (ATR, RSI, Log Returns, VIX Momentum)
-       ├──► 4. ML Inference Engine evaluates Directional Probability Thresholds
-       ├──► 5. Evaluates Option Fair Value via Black-Scholes Mathematical Pricing
-       └──► 6. Generates JSON Payload ──► Committed to Branch ──► Hosted on Pages UI
+       ├──► 3. Structural Features Engineered (VWAP, RVOL, ATR, RSI, VIX Momentum)
+       ├──► 4. Cross-Timeframe Alignment (Simulated 1H & Daily Trend Filtering)
+       ├──► 5. Purged ML Inference evaluates Directional Probability Thresholds
+       ├──► 6. Evaluates Option Fair Value via Black-Scholes Mathematical Pricing
+       └──► 7. Generates JSON Payload ──► Committed to Branch ──► Hosted on Pages UI
 ```
 
 ### Key Technical Pillars
 
-* **Probabilistic Ensemble Classifier:** Utilizes a highly regularized `HistGradientBoostingClassifier` to estimate directional probabilities over a rolling multi-candle forward horizon.
-* **Capital Protection Layer:** Features a strict internal mathematical filter threshold. If the directional confidence score falls within the 45% to 55% noise band, the asset is automatically dropped from the execution grid to safeguard trading capital during choppy market regimes.
+* **Institutional Volume Profiling:** Integrates **Volume Weighted Average Price (VWAP)** and **Relative Volume (RVOL)**. The model measures the asset's distance to its true intraday cost basis and detects hidden institutional accumulation/distribution via volume surges.
+* **Cross-Timeframe Context Engine:** Simulates 1-hour and daily exponential moving averages directly within the 5-minute data stream. If a 5-minute bullish algorithmic signal conflicts with a major higher-timeframe downtrend, the engine automatically aborts the trade to avoid bull traps.
+* **Purged Probabilistic Classifier:** Utilizes a highly regularized `HistGradientBoostingClassifier` trained with a **Purged Data Split**. This introduces a deliberate gap between training and testing data, completely eliminating lookahead bias and time-series data leakage.
+* **Capital Protection Layer:** Features a strict internal mathematical filter threshold. If the directional confidence score falls within the 45% to 55% noise band, the asset is automatically dropped from the execution grid to safeguard trading capital during choppy regimes.
 * **Macro Volatility Coupling:** Uses `pd.merge_asof` to asynchronously map real-time **India VIX (`^INDIAVIX`)** volatility matrices onto stock price action vectors, capturing systemic market fear and compression regimes.
 * **Continuous Option Derivative Pricing:** Processes the theoretical Black-Scholes pricing matrix to derive instant option contracts execution values:
   
