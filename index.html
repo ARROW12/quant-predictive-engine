@@ -4,79 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High-Conviction Derivatives Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root { --bg: #060814; --surface: #0e1326; --border: #1e293b; --text: #f8fafc; --muted: #64748b; --bull: #10b981; --bear: #f43f5e; --accent: #2563eb; }
-        body { font-family: -apple-system, system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 40px 20px; margin: 0; }
-        .container { max-width: 1400px; margin: 0 auto; }
-        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: flex-end; }
-        h1 { margin: 0; font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; }
-        .time { color: var(--muted); font-size: 0.85rem; margin-top: 5px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-        .card.index-card { border: 2px solid #3b82f6; }
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .ticker { font-size: 1.4rem; font-weight: 800; }
-        .badge { padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
-        .BULLISH { background: rgba(16, 185, 129, 0.15); color: var(--bull); }
-        .BEARISH { background: rgba(244, 63, 94, 0.15); color: var(--bear); }
-        .contract-title { font-family: monospace; font-size: 1.1rem; color: #60a5fa; font-weight: 700; background: rgba(59, 130, 246, 0.1); padding: 4px 8px; border-radius: 6px; display: inline-block; margin-bottom: 10px; }
-        .execution-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 15px; margin-top: 15px; border-left: 4px solid var(--accent); font-size: 0.85rem; }
-        .metric-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 0.85rem; color: var(--muted); }
-        .profit-pos { color: var(--bull); font-weight: 700; }
+        :root {
+            --bg: #030712;
+            --surface: #0b1329;
+            --surface-card: rgba(17, 24, 39, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
+            --bullish-color: #10b981;
+            --bearish-color: #ef4444;
+            --accent-glow: rgba(37, 99, 235, 0.15);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% 0%, #111827 0%, var(--bg) 70%);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 24px;
+            min-height: 100vh;
+        }
+
+        .terminal-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin: 0;
+            background: linear-gradient(to right, #ffffff, #9ca3af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .telemetry-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        .param-badge {
+            background: rgba(16, 185, 129, 0.06);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            color: var(--bullish-color);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .terminal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 24px;
+        }
+
+        .matrix-card {
+            background: var(--surface-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .matrix-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+        }
+
+        .matrix-card.index-card {
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(8, 47, 73, 0.4) 100%);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .asset-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
+        }
+
+        .direction-badge {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 6px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.05em;
+        }
+
+        .direction-badge.BULLISH { background: rgba(16, 185, 129, 0.12); color: var(--bullish-color); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .direction-badge.BEARISH { background: rgba(239, 68, 68, 0.12); color: var(--bearish-color); border: 1px solid rgba(239, 68, 68, 0.2); }
+
+        .contract-strip {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #60a5fa;
+            background: rgba(59, 130, 246, 0.08);
+            padding: 8px 14px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-bottom: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.15);
+        }
+
+        .indmoney-container {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            padding: 18px;
+            margin-bottom: 24px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        .metric-row:last-child { border-bottom: none; }
+
+        .label { color: var(--text-muted); }
+        .value { font-weight: 600; }
+        .value.mono { font-family: 'JetBrains Mono', monospace; }
+
+        .pricing-tier {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px 14px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
-<div class="container">
+
+<div class="terminal-container">
     <header>
         <div>
             <h1>F&O Probability Matrix</h1>
-            <div class="time" id="sync-time">Validating temporal trends...</div>
+            <div class="telemetry-tag" id="sync-time">Streaming engine analytics...</div>
         </div>
-        <div style="font-weight: 700; color: var(--bull); font-size: 0.9rem; background: rgba(16,185,129,0.1); padding: 8px 16px; border-radius: 8px;">
-            Target: Net Profit ≥ ₹2,000
+        <div class="param-badge">
+            Parameter: Target Strategy ≥ ₹2,000 Net
         </div>
     </header>
-    <div class="grid" id="signal-grid"></div>
+
+    <div class="terminal-grid" id="signal-grid"></div>
 </div>
 
 <script>
     fetch('./data/predictions.json')
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error();
+            return res.json();
+        })
         .then(data => {
-            document.getElementById('sync-time').innerText = `Models Synchronized: ${data.meta.timestamp_ist}`;
+            document.getElementById('sync-time').innerText = `SYSTEMS OPERATIONAL // LAST SYNC: ${data.meta.timestamp_ist}`;
             const grid = document.getElementById('signal-grid');
             
+            if (!data.signals || data.signals.length === 0) {
+                grid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: rgba(255,255,255,0.01); border: 1px dashed rgba(255,255,255,0.1); border-radius: 16px;">
+                        <div style="font-size: 2.5rem; margin-bottom: 16px;">🛡️</div>
+                        <h3 style="margin: 0 0 8px 0; color: var(--text-main);">Execution Threshold Gated</h3>
+                        <p style="color: var(--text-muted); margin: 0; font-size: 0.95rem; line-height: 1.6;">
+                            Algorithmic vectors are bounded within systemic noise boundaries (46% - 54%).<br>
+                            Risk parameters active. Capital preservation mode deployed.
+                        </p>
+                    </div>`;
+                return;
+            }
+
             data.signals.forEach(sig => {
-                const isIndex = sig.ticker === "BANKNIFTY";
+                const isIndex = sig.ticker === "NIFTY" || sig.ticker === "BANKNIFTY";
                 const plan = sig.execution_plan;
-                const isProfitable = plan.net_profit >= 2000;
-                
                 const card = document.createElement('div');
-                card.className = `card ${isIndex ? 'index-card' : ''}`;
+                card.className = `matrix-card ${isIndex ? 'index-card' : ''}`;
+                
                 card.innerHTML = `
                     <div class="card-header">
-                        <span class="ticker">${sig.ticker}</span>
-                        <span class="badge ${sig.direction}">${sig.direction} (${sig.confidence}%)</span>
-                    </div>
-                    <div class="contract-title">${sig.contract}</div>
-                    
-                    <div class="execution-box" style="border-left-color: ${isProfitable ? 'var(--bull)' : 'var(--bear)'};">
-                        <div style="font-weight: 700; margin-bottom: 8px;">INDmoney Execution Plan</div>
-                        <div class="metric-row"><span>Lots to Trade:</span> <span>${plan.required_lots}</span></div>
-                        <div class="metric-row"><span>Capital Layout:</span> <span>₹${plan.capital_required}</span></div>
-                        <div class="metric-row"><span>Estimated Fees:</span> <span>₹${plan.total_taxes_fees}</span></div>
-                        <div class="metric-row"><span>Net Profit (Target 10%):</span> <span class="profit-pos">₹${plan.net_profit}</span></div>
+                        <span class="asset-title">${sig.ticker} ${isIndex ? '🏛️' : '📦'}</span>
+                        <span class="direction-badge ${sig.direction}">${sig.direction} (${sig.confidence}%)</span>
                     </div>
                     
-                    <div style="margin-top: 15px; font-size: 0.8rem; color: var(--muted);">
-                        Entry: ₹${sig.option_entry} | Target: ₹${sig.option_target} | Stop: ₹${sig.option_stop}
+                    <div><span class="contract-strip">${sig.contract}</span></div>
+                    
+                    <div class="indmoney-container" style="border-left-color: ${sig.direction === 'BULLISH' ? 'var(--bullish-color)' : 'var(--bearish-color)'};">
+                        <div style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; letter-spacing: 0.05em;">INDmoney Real-Time Ticket</div>
+                        <div class="metric-row"><span class="label">Required Allocation:</span> <span class="value">${plan.required_lots} Lots (${plan.required_qty} Qty)</span></div>
+                        <div class="metric-row"><span class="label">Deployment Capital:</span> <span class="value mono">₹${plan.capital_required.toLocaleString('en-IN')}</span></div>
+                        <div class="metric-row"><span class="label">Friction & 2026 STT:</span> <span class="value mono" style="color: #f43f5e;">₹${plan.total_taxes_fees.toLocaleString('en-IN')}</span></div>
+                        <div class="metric-row" style="padding-top: 12px; border-top: 1px dashed rgba(255,255,255,0.1);"><span class="label" style="font-weight:700; color:var(--text-main);">Net Safe Profit:</span> <span class="value mono" style="color: var(--bullish-color); font-size: 1.05rem;">₹${plan.net_profit.toLocaleString('en-IN')}</span></div>
+                    </div>
+                    
+                    <div class="pricing-tier">
+                        <span>Entry: Max ₹${sig.option_entry}</span>
+                        <span>Target: ₹${sig.option_target}</span>
+                        <span>Stop: ₹${sig.option_stop}</span>
                     </div>
                 `;
                 grid.appendChild(card);
             });
         })
-        .catch(err => {
-            document.getElementById('sync-time').innerHTML = `<span style="color: var(--bear);">Pipeline data unavailable.</span>`;
+        .catch(() => {
+            document.getElementById('sync-time').innerHTML = `<span style="color: var(--bearish-color); font-weight: 700;">CRITICAL ERROR: Data processing engine interface failure.</span>`;
         });
 </script>
 </body>
