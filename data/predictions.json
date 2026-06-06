@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-06 07:02:47 UTC"
+        "timestamp_ist": "2026-06-06 07:13:55 UTC"
     },
     "signals": [
         {
@@ -8,60 +8,90 @@
             "spot": 977.7,
             "direction": "BEARISH",
             "contract": "980 PE",
+            "confidence": 65.5,
             "option_entry": 8.5,
-            "option_target": 10.6,
+            "option_target": 9.3,
             "option_stop": 7.2,
-            "lot_size": 15,
-            "capital_per_lot": 127.38,
-            "confidence": 65.5
+            "execution_plan": {
+                "required_lots": 165,
+                "required_qty": 2475,
+                "capital_required": 21017.86,
+                "gross_profit": 2101.79,
+                "total_taxes_fees": 100.81,
+                "net_profit": 2000.98
+            }
         },
         {
             "ticker": "HDFCBANK",
             "spot": 747.45,
             "direction": "BULLISH",
             "contract": "750 CE",
+            "confidence": 63.6,
             "option_entry": 4.1,
-            "option_target": 5.2,
+            "option_target": 4.5,
             "option_stop": 3.5,
-            "lot_size": 25,
-            "capital_per_lot": 103.07,
-            "confidence": 63.6
+            "execution_plan": {
+                "required_lots": 204,
+                "required_qty": 5100,
+                "capital_required": 21026.58,
+                "gross_profit": 2102.66,
+                "total_taxes_fees": 100.83,
+                "net_profit": 2001.83
+            }
         },
         {
             "ticker": "ITC",
             "spot": 280.5,
             "direction": "BULLISH",
             "contract": "280 CE",
+            "confidence": 62.0,
             "option_entry": 2.0,
-            "option_target": 2.5,
+            "option_target": 2.2,
             "option_stop": 1.7,
-            "lot_size": 15,
-            "capital_per_lot": 30.03,
-            "confidence": 62.0
+            "execution_plan": {
+                "required_lots": 700,
+                "required_qty": 10500,
+                "capital_required": 21017.58,
+                "gross_profit": 2101.76,
+                "total_taxes_fees": 100.81,
+                "net_profit": 2000.95
+            }
         },
         {
             "ticker": "RELIANCE",
             "spot": 1291.8,
             "direction": "BULLISH",
             "contract": "1300 CE",
+            "confidence": 59.8,
             "option_entry": 4.2,
-            "option_target": 5.3,
+            "option_target": 4.7,
             "option_stop": 3.6,
-            "lot_size": 15,
-            "capital_per_lot": 63.63,
-            "confidence": 59.8
+            "execution_plan": {
+                "required_lots": 331,
+                "required_qty": 4965,
+                "capital_required": 21062.22,
+                "gross_profit": 2106.22,
+                "total_taxes_fees": 100.92,
+                "net_profit": 2005.3
+            }
         },
         {
             "ticker": "BHARTIARTL",
             "spot": 1798.2,
             "direction": "BULLISH",
             "contract": "1800 CE",
+            "confidence": 55.1,
             "option_entry": 11.3,
-            "option_target": 14.2,
+            "option_target": 12.5,
             "option_stop": 9.6,
-            "lot_size": 15,
-            "capital_per_lot": 170.16,
-            "confidence": 55.1
+            "execution_plan": {
+                "required_lots": 124,
+                "required_qty": 1860,
+                "capital_required": 21100.23,
+                "gross_profit": 2110.02,
+                "total_taxes_fees": 101.02,
+                "net_profit": 2009.01
+            }
         }
     ]
 }
