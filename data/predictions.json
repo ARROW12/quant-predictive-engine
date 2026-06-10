@@ -1,33 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-10 07:56 IST"
+        "timestamp_ist": "2026-06-10 08:01 IST"
     },
     "signals": [
         {
-            "ticker": "TCS",
-            "spot": 2162.4,
-            "direction": "BULLISH",
-            "contract": "2200 CE",
-            "confidence": 58.3,
-            "option_entry": 2.9,
-            "option_target": 3.2,
-            "option_stop": 2.4,
-            "lot_size": 175,
-            "execution_plan": {
-                "required_lots": 42,
-                "required_qty": 7350,
-                "capital_required": 21137.61,
-                "gross_profit": 2113.76,
-                "total_taxes_fees": 101.11,
-                "net_profit": 2012.65
-            }
-        },
-        {
             "ticker": "ICICIBANK",
-            "spot": 1298.9,
+            "spot": 1299.0,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 57.0,
+            "confidence": 56.4,
             "option_entry": 8.1,
             "option_target": 8.9,
             "option_stop": 6.9,
@@ -35,10 +16,10 @@
             "execution_plan": {
                 "required_lots": 4,
                 "required_qty": 2800,
-                "capital_required": 22777.99,
-                "gross_profit": 2277.8,
-                "total_taxes_fees": 105.3,
-                "net_profit": 2172.5
+                "capital_required": 22620.14,
+                "gross_profit": 2262.01,
+                "total_taxes_fees": 104.89,
+                "net_profit": 2157.12
             }
         }
     ]
