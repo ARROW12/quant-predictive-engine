@@ -1,52 +1,33 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-11 08:24 IST"
+        "timestamp_ist": "2026-06-11 08:28 IST"
     },
     "signals": [
         {
-            "ticker": "RELIANCE",
-            "spot": 1266.9,
+            "ticker": "SBIN",
+            "spot": 1005.8,
             "direction": "BEARISH",
-            "contract": "1250 PE",
-            "confidence": 68.6,
-            "option_entry": 2.1,
-            "option_target": 2.3,
-            "option_stop": 1.8,
-            "lot_size": 250,
+            "contract": "1000 PE",
+            "confidence": 69.6,
+            "option_entry": 3.4,
+            "option_target": 3.8,
+            "option_stop": 2.9,
+            "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 40,
-                "required_qty": 10000,
-                "capital_required": 21234.14,
-                "gross_profit": 2123.41,
-                "total_taxes_fees": 101.36,
-                "net_profit": 2022.06
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 749.4,
-            "direction": "BEARISH",
-            "contract": "750 PE",
-            "confidence": 68.2,
-            "option_entry": 5.5,
-            "option_target": 6.0,
-            "option_stop": 4.7,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 3850,
-                "capital_required": 21094.75,
-                "gross_profit": 2109.48,
-                "total_taxes_fees": 101.0,
-                "net_profit": 2008.47
+                "required_lots": 5,
+                "required_qty": 7500,
+                "capital_required": 25617.8,
+                "gross_profit": 2561.78,
+                "total_taxes_fees": 112.54,
+                "net_profit": 2449.24
             }
         },
         {
             "ticker": "ITC",
-            "spot": 282.05,
+            "spot": 282.0,
             "direction": "BEARISH",
             "contract": "280 PE",
-            "confidence": 68.1,
+            "confidence": 67.6,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -61,11 +42,49 @@
             }
         },
         {
+            "ticker": "HDFCBANK",
+            "spot": 748.3,
+            "direction": "BEARISH",
+            "contract": "750 PE",
+            "confidence": 66.1,
+            "option_entry": 6.1,
+            "option_target": 6.7,
+            "option_stop": 5.2,
+            "lot_size": 550,
+            "execution_plan": {
+                "required_lots": 7,
+                "required_qty": 3850,
+                "capital_required": 23343.65,
+                "gross_profit": 2334.37,
+                "total_taxes_fees": 106.74,
+                "net_profit": 2227.63
+            }
+        },
+        {
+            "ticker": "RELIANCE",
+            "spot": 1265.8,
+            "direction": "BEARISH",
+            "contract": "1250 PE",
+            "confidence": 63.4,
+            "option_entry": 2.3,
+            "option_target": 2.6,
+            "option_stop": 2.0,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 37,
+                "required_qty": 9250,
+                "capital_required": 21530.76,
+                "gross_profit": 2153.08,
+                "total_taxes_fees": 102.11,
+                "net_profit": 2050.96
+            }
+        },
+        {
             "ticker": "ICICIBANK",
-            "spot": 1324.0,
+            "spot": 1324.4,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 61.5,
+            "confidence": 56.8,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -80,60 +99,22 @@
             }
         },
         {
-            "ticker": "SBIN",
-            "spot": 1004.6,
-            "direction": "BEARISH",
-            "contract": "1000 PE",
-            "confidence": 58.4,
-            "option_entry": 3.9,
-            "option_target": 4.3,
-            "option_stop": 3.3,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 6000,
-                "capital_required": 23220.05,
-                "gross_profit": 2322.01,
-                "total_taxes_fees": 106.42,
-                "net_profit": 2215.58
-            }
-        },
-        {
-            "ticker": "INFY",
-            "spot": 1117.1,
-            "direction": "BEARISH",
-            "contract": "1100 PE",
-            "confidence": 56.4,
-            "option_entry": 5.1,
-            "option_target": 5.6,
-            "option_stop": 4.3,
-            "lot_size": 400,
-            "execution_plan": {
-                "required_lots": 11,
-                "required_qty": 4400,
-                "capital_required": 22433.57,
-                "gross_profit": 2243.36,
-                "total_taxes_fees": 104.42,
-                "net_profit": 2138.94
-            }
-        },
-        {
             "ticker": "TCS",
-            "spot": 2133.0,
+            "spot": 2131.8,
             "direction": "BEARISH",
             "contract": "2100 PE",
-            "confidence": 54.7,
-            "option_entry": 5.0,
-            "option_target": 5.5,
-            "option_stop": 4.2,
+            "confidence": 55.2,
+            "option_entry": 5.2,
+            "option_target": 5.7,
+            "option_stop": 4.4,
             "lot_size": 175,
             "execution_plan": {
-                "required_lots": 25,
-                "required_qty": 4375,
-                "capital_required": 21809.64,
-                "gross_profit": 2180.96,
-                "total_taxes_fees": 102.83,
-                "net_profit": 2078.14
+                "required_lots": 24,
+                "required_qty": 4200,
+                "capital_required": 21663.19,
+                "gross_profit": 2166.32,
+                "total_taxes_fees": 102.45,
+                "net_profit": 2063.87
             }
         }
     ]
