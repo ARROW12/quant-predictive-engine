@@ -1,44 +1,25 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-12 08:17 IST"
+        "timestamp_ist": "2026-06-12 11:54 IST"
     },
     "signals": [
         {
-            "ticker": "SBIN",
-            "spot": 1010.1,
+            "ticker": "INFY",
+            "spot": 1116.0,
             "direction": "BEARISH",
-            "contract": "1000 PE",
-            "confidence": 64.8,
-            "option_entry": 3.3,
-            "option_target": 3.6,
-            "option_stop": 2.8,
-            "lot_size": 1500,
+            "contract": "1100 PE",
+            "confidence": 55.4,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 400,
             "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 7500,
-                "capital_required": 24768.88,
-                "gross_profit": 2476.89,
-                "total_taxes_fees": 110.37,
-                "net_profit": 2366.51
-            }
-        },
-        {
-            "ticker": "TCS",
-            "spot": 2150.0,
-            "direction": "BEARISH",
-            "contract": "2200 PE",
-            "confidence": 56.2,
-            "option_entry": 49.9,
-            "option_target": 54.9,
-            "option_stop": 42.4,
-            "lot_size": 175,
-            "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 525,
-                "capital_required": 26188.89,
-                "gross_profit": 2618.89,
-                "total_taxes_fees": 114.0,
-                "net_profit": 2504.89
+                "required_lots": 27,
+                "required_qty": 10800,
+                "capital_required": 21600.0,
+                "gross_profit": 2160.0,
+                "total_taxes_fees": 102.29,
+                "net_profit": 2057.71
             }
         }
     ]
