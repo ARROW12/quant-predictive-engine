@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-17 08:50 IST"
+        "timestamp_ist": "2026-06-17 08:54 IST"
     },
     "signals": [
         {
@@ -28,17 +28,17 @@
             "direction": "BEARISH",
             "contract": "1350 PE",
             "confidence": 63.6,
-            "option_entry": 21.7,
+            "option_entry": 21.6,
             "option_target": 23.8,
             "option_stop": 18.4,
             "lot_size": 250,
             "execution_plan": {
                 "required_lots": 4,
                 "required_qty": 1000,
-                "capital_required": 21665.21,
-                "gross_profit": 2166.52,
-                "total_taxes_fees": 102.46,
-                "net_profit": 2064.06
+                "capital_required": 21610.32,
+                "gross_profit": 2161.03,
+                "total_taxes_fees": 102.32,
+                "net_profit": 2058.71
             }
         },
         {
@@ -46,7 +46,7 @@
             "spot": 2217.6,
             "direction": "BULLISH",
             "contract": "2200 CE",
-            "confidence": 58.0,
+            "confidence": 57.7,
             "option_entry": 26.0,
             "option_target": 28.6,
             "option_stop": 22.1,
