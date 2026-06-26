@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-25 12:23 IST"
+        "timestamp_ist": "2026-06-26 07:38 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 1319.0,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 62.8,
+            "confidence": 66.3,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -23,30 +23,11 @@
             }
         },
         {
-            "ticker": "TCS",
-            "spot": 2095.9,
-            "direction": "BEARISH",
-            "contract": "2100 PE",
-            "confidence": 58.9,
-            "option_entry": 17.8,
-            "option_target": 19.6,
-            "option_stop": 15.1,
-            "lot_size": 175,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 1225,
-                "capital_required": 21824.51,
-                "gross_profit": 2182.45,
-                "total_taxes_fees": 102.86,
-                "net_profit": 2079.59
-            }
-        },
-        {
             "ticker": "HDFCBANK",
             "spot": 796.0,
             "direction": "BEARISH",
             "contract": "800 PE",
-            "confidence": 56.2,
+            "confidence": 57.7,
             "option_entry": 6.5,
             "option_target": 7.2,
             "option_stop": 5.6,
@@ -58,6 +39,25 @@
                 "gross_profit": 2158.64,
                 "total_taxes_fees": 102.26,
                 "net_profit": 2056.38
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2095.9,
+            "direction": "BEARISH",
+            "contract": "2100 PE",
+            "confidence": 55.8,
+            "option_entry": 17.8,
+            "option_target": 19.6,
+            "option_stop": 15.1,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 7,
+                "required_qty": 1225,
+                "capital_required": 21824.51,
+                "gross_profit": 2182.45,
+                "total_taxes_fees": 102.86,
+                "net_profit": 2079.59
             }
         }
     ]
