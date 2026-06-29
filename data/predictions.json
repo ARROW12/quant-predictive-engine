@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-29 12:53 IST"
+        "timestamp_ist": "2026-06-29 14:07 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 290.65,
             "direction": "BEARISH",
             "contract": "290 PE",
-            "confidence": 60.4,
+            "confidence": 61.2,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -27,7 +27,7 @@
             "spot": 1387.9,
             "direction": "BEARISH",
             "contract": "1400 PE",
-            "confidence": 55.8,
+            "confidence": 56.3,
             "option_entry": 14.6,
             "option_target": 16.0,
             "option_stop": 12.4,
@@ -58,6 +58,25 @@
                 "gross_profit": 2121.51,
                 "total_taxes_fees": 101.31,
                 "net_profit": 2020.2
+            }
+        },
+        {
+            "ticker": "RELIANCE",
+            "spot": 1301.7,
+            "direction": "BEARISH",
+            "contract": "1300 PE",
+            "confidence": 55.0,
+            "option_entry": 5.2,
+            "option_target": 5.7,
+            "option_stop": 4.4,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 17,
+                "required_qty": 4250,
+                "capital_required": 21964.59,
+                "gross_profit": 2196.46,
+                "total_taxes_fees": 103.22,
+                "net_profit": 2093.24
             }
         }
     ]
