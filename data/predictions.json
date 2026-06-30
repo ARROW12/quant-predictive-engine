@@ -1,82 +1,63 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-29 14:07 IST"
+        "timestamp_ist": "2026-06-30 07:38 IST"
     },
     "signals": [
         {
-            "ticker": "ITC",
-            "spot": 290.65,
+            "ticker": "SBIN",
+            "spot": 1039.05,
             "direction": "BEARISH",
-            "contract": "290 PE",
-            "confidence": 61.2,
-            "option_entry": 2.0,
-            "option_target": 2.2,
-            "option_stop": 1.7,
-            "lot_size": 1600,
+            "contract": "1050 PE",
+            "confidence": 62.2,
+            "option_entry": 13.0,
+            "option_target": 14.3,
+            "option_stop": 11.1,
+            "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 11200,
-                "capital_required": 22400.0,
-                "gross_profit": 2240.0,
-                "total_taxes_fees": 104.33,
-                "net_profit": 2135.67
-            }
-        },
-        {
-            "ticker": "ICICIBANK",
-            "spot": 1387.9,
-            "direction": "BEARISH",
-            "contract": "1400 PE",
-            "confidence": 56.3,
-            "option_entry": 14.6,
-            "option_target": 16.0,
-            "option_stop": 12.4,
-            "lot_size": 700,
-            "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 2100,
-                "capital_required": 30630.95,
-                "gross_profit": 3063.09,
-                "total_taxes_fees": 125.32,
-                "net_profit": 2937.77
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 798.85,
-            "direction": "BEARISH",
-            "contract": "800 PE",
-            "confidence": 55.4,
-            "option_entry": 5.5,
-            "option_target": 6.1,
-            "option_stop": 4.7,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 3850,
-                "capital_required": 21215.13,
-                "gross_profit": 2121.51,
-                "total_taxes_fees": 101.31,
-                "net_profit": 2020.2
+                "required_lots": 2,
+                "required_qty": 3000,
+                "capital_required": 39040.43,
+                "gross_profit": 3904.04,
+                "total_taxes_fees": 146.77,
+                "net_profit": 3757.27
             }
         },
         {
             "ticker": "RELIANCE",
-            "spot": 1301.7,
+            "spot": 1297.3,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 55.0,
-            "option_entry": 5.2,
-            "option_target": 5.7,
-            "option_stop": 4.4,
+            "confidence": 58.9,
+            "option_entry": 7.8,
+            "option_target": 8.6,
+            "option_stop": 6.7,
             "lot_size": 250,
             "execution_plan": {
-                "required_lots": 17,
-                "required_qty": 4250,
-                "capital_required": 21964.59,
-                "gross_profit": 2196.46,
-                "total_taxes_fees": 103.22,
-                "net_profit": 2093.24
+                "required_lots": 11,
+                "required_qty": 2750,
+                "capital_required": 21546.77,
+                "gross_profit": 2154.68,
+                "total_taxes_fees": 102.16,
+                "net_profit": 2052.52
+            }
+        },
+        {
+            "ticker": "ICICIBANK",
+            "spot": 1377.8,
+            "direction": "BEARISH",
+            "contract": "1400 PE",
+            "confidence": 57.0,
+            "option_entry": 23.2,
+            "option_target": 25.5,
+            "option_stop": 19.7,
+            "lot_size": 700,
+            "execution_plan": {
+                "required_lots": 2,
+                "required_qty": 1400,
+                "capital_required": 32453.69,
+                "gross_profit": 3245.37,
+                "total_taxes_fees": 129.97,
+                "net_profit": 3115.4
             }
         }
     ]
