@@ -1,63 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-06-30 07:38 IST"
+        "timestamp_ist": "2026-06-30 07:42 IST"
     },
     "signals": [
         {
-            "ticker": "SBIN",
-            "spot": 1039.05,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 62.2,
-            "option_entry": 13.0,
-            "option_target": 14.3,
-            "option_stop": 11.1,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 39040.43,
-                "gross_profit": 3904.04,
-                "total_taxes_fees": 146.77,
-                "net_profit": 3757.27
-            }
-        },
-        {
             "ticker": "RELIANCE",
-            "spot": 1297.3,
+            "spot": 1297.5,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 58.9,
-            "option_entry": 7.8,
-            "option_target": 8.6,
-            "option_stop": 6.7,
+            "confidence": 60.6,
+            "option_entry": 7.7,
+            "option_target": 8.5,
+            "option_stop": 6.6,
             "lot_size": 250,
             "execution_plan": {
                 "required_lots": 11,
                 "required_qty": 2750,
-                "capital_required": 21546.77,
-                "gross_profit": 2154.68,
-                "total_taxes_fees": 102.16,
-                "net_profit": 2052.52
+                "capital_required": 21248.79,
+                "gross_profit": 2124.88,
+                "total_taxes_fees": 101.4,
+                "net_profit": 2023.48
             }
         },
         {
             "ticker": "ICICIBANK",
-            "spot": 1377.8,
+            "spot": 1376.9,
             "direction": "BEARISH",
             "contract": "1400 PE",
-            "confidence": 57.0,
-            "option_entry": 23.2,
-            "option_target": 25.5,
-            "option_stop": 19.7,
+            "confidence": 54.9,
+            "option_entry": 23.9,
+            "option_target": 26.3,
+            "option_stop": 20.3,
             "lot_size": 700,
             "execution_plan": {
                 "required_lots": 2,
                 "required_qty": 1400,
-                "capital_required": 32453.69,
-                "gross_profit": 3245.37,
-                "total_taxes_fees": 129.97,
-                "net_profit": 3115.4
+                "capital_required": 33515.97,
+                "gross_profit": 3351.6,
+                "total_taxes_fees": 132.68,
+                "net_profit": 3218.91
             }
         }
     ]
