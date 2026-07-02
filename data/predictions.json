@@ -1,11 +1,30 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-02 06:56 IST"
+        "timestamp_ist": "2026-07-02 07:23 IST"
     },
     "signals": [
         {
+            "ticker": "HDFCBANK",
+            "spot": 798.2,
+            "direction": "BEARISH",
+            "contract": "800 PE",
+            "confidence": 59.8,
+            "option_entry": 5.4,
+            "option_target": 5.9,
+            "option_stop": 4.6,
+            "lot_size": 550,
+            "execution_plan": {
+                "required_lots": 8,
+                "required_qty": 4400,
+                "capital_required": 23760.84,
+                "gross_profit": 2376.08,
+                "total_taxes_fees": 107.8,
+                "net_profit": 2268.28
+            }
+        },
+        {
             "ticker": "ITC",
-            "spot": 289.1,
+            "spot": 290.05,
             "direction": "BEARISH",
             "contract": "290 PE",
             "confidence": 59.7,
@@ -23,30 +42,11 @@
             }
         },
         {
-            "ticker": "HDFCBANK",
-            "spot": 798.3,
-            "direction": "BEARISH",
-            "contract": "800 PE",
-            "confidence": 58.0,
-            "option_entry": 5.3,
-            "option_target": 5.9,
-            "option_stop": 4.5,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 8,
-                "required_qty": 4400,
-                "capital_required": 23401.88,
-                "gross_profit": 2340.19,
-                "total_taxes_fees": 106.89,
-                "net_profit": 2233.3
-            }
-        },
-        {
             "ticker": "RELIANCE",
-            "spot": 1304.2,
+            "spot": 1303.9,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 56.5,
+            "confidence": 55.8,
             "option_entry": 4.9,
             "option_target": 5.4,
             "option_stop": 4.2,
@@ -54,29 +54,10 @@
             "execution_plan": {
                 "required_lots": 18,
                 "required_qty": 4500,
-                "capital_required": 22134.46,
-                "gross_profit": 2213.45,
-                "total_taxes_fees": 103.65,
-                "net_profit": 2109.79
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1046.8,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 54.9,
-            "option_entry": 8.5,
-            "option_target": 9.3,
-            "option_stop": 7.2,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 25468.09,
-                "gross_profit": 2546.81,
-                "total_taxes_fees": 112.16,
-                "net_profit": 2434.65
+                "capital_required": 22190.05,
+                "gross_profit": 2219.01,
+                "total_taxes_fees": 103.8,
+                "net_profit": 2115.21
             }
         }
     ]
