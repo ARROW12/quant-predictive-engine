@@ -1,33 +1,52 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-07 07:03 IST"
+        "timestamp_ist": "2026-07-07 07:29 IST"
     },
     "signals": [
         {
             "ticker": "TCS",
-            "spot": 2105.4,
+            "spot": 2098.0,
             "direction": "BEARISH",
             "contract": "2100 PE",
-            "confidence": 65.7,
-            "option_entry": 13.1,
-            "option_target": 14.4,
-            "option_stop": 11.1,
+            "confidence": 63.6,
+            "option_entry": 16.6,
+            "option_target": 18.3,
+            "option_stop": 14.1,
             "lot_size": 175,
             "execution_plan": {
-                "required_lots": 10,
-                "required_qty": 1750,
-                "capital_required": 22907.86,
-                "gross_profit": 2290.79,
-                "total_taxes_fees": 105.63,
-                "net_profit": 2185.16
+                "required_lots": 8,
+                "required_qty": 1400,
+                "capital_required": 23246.64,
+                "gross_profit": 2324.66,
+                "total_taxes_fees": 106.49,
+                "net_profit": 2218.17
+            }
+        },
+        {
+            "ticker": "INFY",
+            "spot": 1079.7,
+            "direction": "BEARISH",
+            "contract": "1100 PE",
+            "confidence": 61.3,
+            "option_entry": 23.0,
+            "option_target": 25.3,
+            "option_stop": 19.6,
+            "lot_size": 400,
+            "execution_plan": {
+                "required_lots": 3,
+                "required_qty": 1200,
+                "capital_required": 27634.84,
+                "gross_profit": 2763.48,
+                "total_taxes_fees": 117.68,
+                "net_profit": 2645.8
             }
         },
         {
             "ticker": "RELIANCE",
-            "spot": 1313.0,
+            "spot": 1315.3,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 54.7,
+            "confidence": 55.4,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
