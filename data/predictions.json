@@ -1,82 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-06 13:49 IST"
+        "timestamp_ist": "2026-07-07 07:03 IST"
     },
     "signals": [
         {
-            "ticker": "ITC",
-            "spot": 289.25,
+            "ticker": "TCS",
+            "spot": 2105.4,
             "direction": "BEARISH",
-            "contract": "290 PE",
-            "confidence": 63.1,
+            "contract": "2100 PE",
+            "confidence": 65.7,
+            "option_entry": 13.1,
+            "option_target": 14.4,
+            "option_stop": 11.1,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 10,
+                "required_qty": 1750,
+                "capital_required": 22907.86,
+                "gross_profit": 2290.79,
+                "total_taxes_fees": 105.63,
+                "net_profit": 2185.16
+            }
+        },
+        {
+            "ticker": "RELIANCE",
+            "spot": 1313.0,
+            "direction": "BEARISH",
+            "contract": "1300 PE",
+            "confidence": 54.7,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
-            "lot_size": 1600,
+            "lot_size": 250,
             "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 11200,
-                "capital_required": 22400.0,
-                "gross_profit": 2240.0,
-                "total_taxes_fees": 104.33,
-                "net_profit": 2135.67
-            }
-        },
-        {
-            "ticker": "INFY",
-            "spot": 1042.5,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 62.3,
-            "option_entry": 10.9,
-            "option_target": 12.0,
-            "option_stop": 9.2,
-            "lot_size": 400,
-            "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 2000,
-                "capital_required": 21742.89,
-                "gross_profit": 2174.29,
-                "total_taxes_fees": 102.66,
-                "net_profit": 2071.63
-            }
-        },
-        {
-            "ticker": "TCS",
-            "spot": 2058.0,
-            "direction": "BEARISH",
-            "contract": "2100 PE",
-            "confidence": 55.5,
-            "option_entry": 42.7,
-            "option_target": 47.0,
-            "option_stop": 36.3,
-            "lot_size": 175,
-            "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 525,
-                "capital_required": 22411.22,
-                "gross_profit": 2241.12,
-                "total_taxes_fees": 104.36,
-                "net_profit": 2136.76
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1038.0,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 54.4,
-            "option_entry": 13.2,
-            "option_target": 14.5,
-            "option_stop": 11.2,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 39623.9,
-                "gross_profit": 3962.39,
-                "total_taxes_fees": 148.26,
-                "net_profit": 3814.13
+                "required_lots": 43,
+                "required_qty": 10750,
+                "capital_required": 21500.0,
+                "gross_profit": 2150.0,
+                "total_taxes_fees": 102.04,
+                "net_profit": 2047.96
             }
         }
     ]
