@@ -1,14 +1,33 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-08 06:15 IST"
+        "timestamp_ist": "2026-07-08 06:22 IST"
     },
     "signals": [
+        {
+            "ticker": "RELIANCE",
+            "spot": 1292.5,
+            "direction": "BEARISH",
+            "contract": "1300 PE",
+            "confidence": 58.7,
+            "option_entry": 12.8,
+            "option_target": 14.1,
+            "option_stop": 10.9,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 7,
+                "required_qty": 1750,
+                "capital_required": 22385.36,
+                "gross_profit": 2238.54,
+                "total_taxes_fees": 104.29,
+                "net_profit": 2134.24
+            }
+        },
         {
             "ticker": "HDFCBANK",
             "spot": 827.0,
             "direction": "BEARISH",
             "contract": "830 PE",
-            "confidence": 59.5,
+            "confidence": 58.0,
             "option_entry": 5.8,
             "option_target": 6.3,
             "option_stop": 4.9,
@@ -20,25 +39,6 @@
                 "gross_profit": 2221.38,
                 "total_taxes_fees": 103.86,
                 "net_profit": 2117.52
-            }
-        },
-        {
-            "ticker": "RELIANCE",
-            "spot": 1292.2,
-            "direction": "BEARISH",
-            "contract": "1300 PE",
-            "confidence": 58.0,
-            "option_entry": 13.0,
-            "option_target": 14.3,
-            "option_stop": 11.0,
-            "lot_size": 250,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 1750,
-                "capital_required": 22710.92,
-                "gross_profit": 2271.09,
-                "total_taxes_fees": 105.12,
-                "net_profit": 2165.97
             }
         }
     ]
