@@ -1,8 +1,27 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-09 10:43 IST"
+        "timestamp_ist": "2026-07-09 12:41 IST"
     },
     "signals": [
+        {
+            "ticker": "SBIN",
+            "spot": 1021.3,
+            "direction": "BEARISH",
+            "contract": "1000 PE",
+            "confidence": 58.1,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 1500,
+            "execution_plan": {
+                "required_lots": 8,
+                "required_qty": 12000,
+                "capital_required": 24000.0,
+                "gross_profit": 2400.0,
+                "total_taxes_fees": 108.41,
+                "net_profit": 2291.59
+            }
+        },
         {
             "ticker": "HDFCBANK",
             "spot": 816.6,
@@ -20,25 +39,6 @@
                 "gross_profit": 2139.1,
                 "total_taxes_fees": 101.76,
                 "net_profit": 2037.34
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1021.3,
-            "direction": "BEARISH",
-            "contract": "1000 PE",
-            "confidence": 55.3,
-            "option_entry": 2.0,
-            "option_target": 2.2,
-            "option_stop": 1.7,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 8,
-                "required_qty": 12000,
-                "capital_required": 24000.0,
-                "gross_profit": 2400.0,
-                "total_taxes_fees": 108.41,
-                "net_profit": 2291.59
             }
         }
     ]
