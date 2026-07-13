@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-13 10:00 IST"
+        "timestamp_ist": "2026-07-13 12:33 IST"
     },
     "signals": [
         {
@@ -8,18 +8,18 @@
             "spot": 1296.8,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 62.4,
-            "option_entry": 8.2,
-            "option_target": 9.0,
-            "option_stop": 7.0,
+            "confidence": 64.1,
+            "option_entry": 7.6,
+            "option_target": 8.3,
+            "option_stop": 6.5,
             "lot_size": 250,
             "execution_plan": {
-                "required_lots": 11,
-                "required_qty": 2750,
-                "capital_required": 22506.22,
-                "gross_profit": 2250.62,
-                "total_taxes_fees": 104.6,
-                "net_profit": 2146.02
+                "required_lots": 12,
+                "required_qty": 3000,
+                "capital_required": 22769.82,
+                "gross_profit": 2276.98,
+                "total_taxes_fees": 105.27,
+                "net_profit": 2171.71
             }
         },
         {
@@ -27,18 +27,18 @@
             "spot": 1036.0,
             "direction": "BULLISH",
             "contract": "1050 CE",
-            "confidence": 59.1,
-            "option_entry": 3.1,
-            "option_target": 3.5,
-            "option_stop": 2.7,
+            "confidence": 58.5,
+            "option_entry": 2.7,
+            "option_target": 3.0,
+            "option_stop": 2.3,
             "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 7500,
-                "capital_required": 23549.08,
-                "gross_profit": 2354.91,
-                "total_taxes_fees": 107.26,
-                "net_profit": 2247.65
+                "required_lots": 6,
+                "required_qty": 9000,
+                "capital_required": 24606.96,
+                "gross_profit": 2460.7,
+                "total_taxes_fees": 109.96,
+                "net_profit": 2350.74
             }
         },
         {
@@ -46,18 +46,18 @@
             "spot": 817.4,
             "direction": "BEARISH",
             "contract": "820 PE",
-            "confidence": 57.4,
-            "option_entry": 6.7,
-            "option_target": 7.4,
-            "option_stop": 5.7,
+            "confidence": 57.5,
+            "option_entry": 5.0,
+            "option_target": 5.5,
+            "option_stop": 4.3,
             "lot_size": 550,
             "execution_plan": {
-                "required_lots": 6,
-                "required_qty": 3300,
-                "capital_required": 22259.31,
-                "gross_profit": 2225.93,
-                "total_taxes_fees": 103.97,
-                "net_profit": 2121.96
+                "required_lots": 8,
+                "required_qty": 4400,
+                "capital_required": 22045.81,
+                "gross_profit": 2204.58,
+                "total_taxes_fees": 103.43,
+                "net_profit": 2101.15
             }
         },
         {
@@ -65,18 +65,37 @@
             "spot": 1100.1,
             "direction": "BEARISH",
             "contract": "1100 PE",
-            "confidence": 56.4,
-            "option_entry": 10.5,
-            "option_target": 11.5,
-            "option_stop": 8.9,
+            "confidence": 56.5,
+            "option_entry": 10.4,
+            "option_target": 11.4,
+            "option_stop": 8.8,
             "lot_size": 400,
             "execution_plan": {
                 "required_lots": 6,
                 "required_qty": 2400,
-                "capital_required": 25137.17,
-                "gross_profit": 2513.72,
-                "total_taxes_fees": 111.31,
-                "net_profit": 2402.4
+                "capital_required": 24862.21,
+                "gross_profit": 2486.22,
+                "total_taxes_fees": 110.61,
+                "net_profit": 2375.61
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2181.1,
+            "direction": "BEARISH",
+            "contract": "2200 PE",
+            "confidence": 54.3,
+            "option_entry": 32.2,
+            "option_target": 35.4,
+            "option_stop": 27.3,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 4,
+                "required_qty": 700,
+                "capital_required": 22522.77,
+                "gross_profit": 2252.28,
+                "total_taxes_fees": 104.64,
+                "net_profit": 2147.63
             }
         }
     ]
