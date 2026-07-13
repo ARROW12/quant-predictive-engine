@@ -1,14 +1,71 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-13 06:40 IST"
+        "timestamp_ist": "2026-07-13 06:45 IST"
     },
     "signals": [
         {
+            "ticker": "RELIANCE",
+            "spot": 1298.2,
+            "direction": "BEARISH",
+            "contract": "1300 PE",
+            "confidence": 58.5,
+            "option_entry": 8.5,
+            "option_target": 9.4,
+            "option_stop": 7.2,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 10,
+                "required_qty": 2500,
+                "capital_required": 21265.58,
+                "gross_profit": 2126.56,
+                "total_taxes_fees": 101.44,
+                "net_profit": 2025.12
+            }
+        },
+        {
+            "ticker": "SBIN",
+            "spot": 1034.4,
+            "direction": "BEARISH",
+            "contract": "1050 PE",
+            "confidence": 56.9,
+            "option_entry": 18.2,
+            "option_target": 20.0,
+            "option_stop": 15.5,
+            "lot_size": 1500,
+            "execution_plan": {
+                "required_lots": 1,
+                "required_qty": 1500,
+                "capital_required": 27286.75,
+                "gross_profit": 2728.68,
+                "total_taxes_fees": 116.8,
+                "net_profit": 2611.88
+            }
+        },
+        {
+            "ticker": "ICICIBANK",
+            "spot": 1398.7,
+            "direction": "BEARISH",
+            "contract": "1400 PE",
+            "confidence": 56.6,
+            "option_entry": 8.9,
+            "option_target": 9.8,
+            "option_stop": 7.5,
+            "lot_size": 700,
+            "execution_plan": {
+                "required_lots": 4,
+                "required_qty": 2800,
+                "capital_required": 24828.64,
+                "gross_profit": 2482.86,
+                "total_taxes_fees": 110.53,
+                "net_profit": 2372.34
+            }
+        },
+        {
             "ticker": "ITC",
-            "spot": 280.5,
+            "spot": 280.0,
             "direction": "BEARISH",
             "contract": "280 PE",
-            "confidence": 62.8,
+            "confidence": 55.8,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -20,82 +77,6 @@
                 "gross_profit": 2240.0,
                 "total_taxes_fees": 104.33,
                 "net_profit": 2135.67
-            }
-        },
-        {
-            "ticker": "RELIANCE",
-            "spot": 1297.4,
-            "direction": "BEARISH",
-            "contract": "1300 PE",
-            "confidence": 60.9,
-            "option_entry": 9.0,
-            "option_target": 9.9,
-            "option_stop": 7.6,
-            "lot_size": 250,
-            "execution_plan": {
-                "required_lots": 10,
-                "required_qty": 2500,
-                "capital_required": 22488.2,
-                "gross_profit": 2248.82,
-                "total_taxes_fees": 104.56,
-                "net_profit": 2144.26
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1034.7,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 56.2,
-            "option_entry": 18.1,
-            "option_target": 19.9,
-            "option_stop": 15.4,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 1,
-                "required_qty": 1500,
-                "capital_required": 27179.87,
-                "gross_profit": 2717.99,
-                "total_taxes_fees": 116.52,
-                "net_profit": 2601.46
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 816.55,
-            "direction": "BEARISH",
-            "contract": "820 PE",
-            "confidence": 56.0,
-            "option_entry": 7.7,
-            "option_target": 8.5,
-            "option_stop": 6.6,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 2750,
-                "capital_required": 21278.62,
-                "gross_profit": 2127.86,
-                "total_taxes_fees": 101.47,
-                "net_profit": 2026.39
-            }
-        },
-        {
-            "ticker": "ICICIBANK",
-            "spot": 1398.4,
-            "direction": "BEARISH",
-            "contract": "1400 PE",
-            "confidence": 55.8,
-            "option_entry": 9.1,
-            "option_target": 10.1,
-            "option_stop": 7.8,
-            "lot_size": 700,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 2800,
-                "capital_required": 25609.9,
-                "gross_profit": 2560.99,
-                "total_taxes_fees": 112.52,
-                "net_profit": 2448.47
             }
         }
     ]
