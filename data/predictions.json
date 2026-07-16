@@ -1,63 +1,63 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-16 06:10 IST"
+        "timestamp_ist": "2026-07-16 08:31 IST"
     },
     "signals": [
         {
             "ticker": "ITC",
-            "spot": 277.9,
+            "spot": 279.45,
             "direction": "BEARISH",
             "contract": "280 PE",
-            "confidence": 59.6,
-            "option_entry": 2.4,
-            "option_target": 2.6,
-            "option_stop": 2.0,
+            "confidence": 61.5,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
             "lot_size": 1600,
             "execution_plan": {
+                "required_lots": 7,
+                "required_qty": 11200,
+                "capital_required": 22400.0,
+                "gross_profit": 2240.0,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.67
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2211.1,
+            "direction": "BEARISH",
+            "contract": "2200 PE",
+            "confidence": 57.0,
+            "option_entry": 21.0,
+            "option_target": 23.1,
+            "option_stop": 17.8,
+            "lot_size": 175,
+            "execution_plan": {
                 "required_lots": 6,
-                "required_qty": 9600,
-                "capital_required": 23076.2,
-                "gross_profit": 2307.62,
-                "total_taxes_fees": 106.06,
-                "net_profit": 2201.56
+                "required_qty": 1050,
+                "capital_required": 22038.76,
+                "gross_profit": 2203.88,
+                "total_taxes_fees": 103.41,
+                "net_profit": 2100.47
             }
         },
         {
             "ticker": "INFY",
-            "spot": 1088.4,
+            "spot": 1087.9,
             "direction": "BEARISH",
             "contract": "1100 PE",
-            "confidence": 56.8,
-            "option_entry": 18.1,
-            "option_target": 19.9,
-            "option_stop": 15.4,
+            "confidence": 55.1,
+            "option_entry": 18.3,
+            "option_target": 20.1,
+            "option_stop": 15.6,
             "lot_size": 400,
             "execution_plan": {
                 "required_lots": 3,
                 "required_qty": 1200,
-                "capital_required": 21739.11,
-                "gross_profit": 2173.91,
-                "total_taxes_fees": 102.65,
-                "net_profit": 2071.27
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 812.4,
-            "direction": "BEARISH",
-            "contract": "810 PE",
-            "confidence": 55.5,
-            "option_entry": 3.7,
-            "option_target": 4.1,
-            "option_stop": 3.2,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 11,
-                "required_qty": 6050,
-                "capital_required": 22478.17,
-                "gross_profit": 2247.82,
-                "total_taxes_fees": 104.53,
-                "net_profit": 2143.29
+                "capital_required": 21959.63,
+                "gross_profit": 2195.96,
+                "total_taxes_fees": 103.21,
+                "net_profit": 2092.75
             }
         }
     ]
