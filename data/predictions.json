@@ -1,25 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-17 11:23 IST"
+        "timestamp_ist": "2026-07-20 06:34 IST"
     },
     "signals": [
         {
-            "ticker": "ITC",
-            "spot": 280.85,
+            "ticker": "SBIN",
+            "spot": 1042.4,
             "direction": "BEARISH",
-            "contract": "280 PE",
-            "confidence": 57.8,
-            "option_entry": 2.0,
-            "option_target": 2.2,
-            "option_stop": 1.7,
-            "lot_size": 1600,
+            "contract": "1050 PE",
+            "confidence": 58.6,
+            "option_entry": 11.8,
+            "option_target": 13.0,
+            "option_stop": 10.0,
+            "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 11200,
-                "capital_required": 22400.0,
-                "gross_profit": 2240.0,
-                "total_taxes_fees": 104.33,
-                "net_profit": 2135.67
+                "required_lots": 2,
+                "required_qty": 3000,
+                "capital_required": 35409.73,
+                "gross_profit": 3540.97,
+                "total_taxes_fees": 137.51,
+                "net_profit": 3403.46
+            }
+        },
+        {
+            "ticker": "ICICIBANK",
+            "spot": 1453.6,
+            "direction": "BULLISH",
+            "contract": "1450 CE",
+            "confidence": 54.3,
+            "option_entry": 12.3,
+            "option_target": 13.5,
+            "option_stop": 10.5,
+            "lot_size": 700,
+            "execution_plan": {
+                "required_lots": 3,
+                "required_qty": 2100,
+                "capital_required": 25856.76,
+                "gross_profit": 2585.68,
+                "total_taxes_fees": 113.15,
+                "net_profit": 2472.53
             }
         }
     ]
