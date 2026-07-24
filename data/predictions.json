@@ -1,14 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-07-24 06:13 IST"
+        "timestamp_ist": "2026-07-24 06:19 IST"
     },
     "signals": [
         {
             "ticker": "RELIANCE",
-            "spot": 1279.4,
+            "spot": 1277.0,
             "direction": "BULLISH",
             "contract": "1300 CE",
-            "confidence": 57.9,
+            "confidence": 61.3,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -20,6 +20,44 @@
                 "gross_profit": 2150.0,
                 "total_taxes_fees": 102.04,
                 "net_profit": 2047.96
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2219.7,
+            "direction": "BEARISH",
+            "contract": "2200 PE",
+            "confidence": 56.7,
+            "option_entry": 7.7,
+            "option_target": 8.5,
+            "option_stop": 6.6,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 16,
+                "required_qty": 2800,
+                "capital_required": 21607.14,
+                "gross_profit": 2160.71,
+                "total_taxes_fees": 102.31,
+                "net_profit": 2058.4
+            }
+        },
+        {
+            "ticker": "SBIN",
+            "spot": 1004.3,
+            "direction": "BULLISH",
+            "contract": "1000 CE",
+            "confidence": 54.3,
+            "option_entry": 8.2,
+            "option_target": 9.0,
+            "option_stop": 6.9,
+            "lot_size": 1500,
+            "execution_plan": {
+                "required_lots": 2,
+                "required_qty": 3000,
+                "capital_required": 24481.78,
+                "gross_profit": 2448.18,
+                "total_taxes_fees": 109.64,
+                "net_profit": 2338.54
             }
         }
     ]
