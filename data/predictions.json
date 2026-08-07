@@ -1,14 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-07 05:23 IST"
+        "timestamp_ist": "2026-08-07 05:27 IST"
     },
     "signals": [
         {
             "ticker": "HDFCBANK",
-            "spot": 733.85,
+            "spot": 733.1,
             "direction": "BEARISH",
             "contract": "730 PE",
-            "confidence": 59.3,
+            "confidence": 56.2,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
