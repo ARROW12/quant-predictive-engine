@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-10 09:50 IST"
+        "timestamp_ist": "2026-08-10 10:51 IST"
     },
     "signals": [
         {
@@ -8,18 +8,18 @@
             "spot": 1326.3,
             "direction": "BEARISH",
             "contract": "1350 PE",
-            "confidence": 61.5,
-            "option_entry": 24.3,
-            "option_target": 26.7,
-            "option_stop": 20.7,
+            "confidence": 60.6,
+            "option_entry": 24.1,
+            "option_target": 26.5,
+            "option_stop": 20.5,
             "lot_size": 250,
             "execution_plan": {
                 "required_lots": 4,
                 "required_qty": 1000,
-                "capital_required": 24294.48,
-                "gross_profit": 2429.45,
-                "total_taxes_fees": 109.16,
-                "net_profit": 2320.28
+                "capital_required": 24093.69,
+                "gross_profit": 2409.37,
+                "total_taxes_fees": 108.65,
+                "net_profit": 2300.72
             }
         },
         {
@@ -27,18 +27,37 @@
             "spot": 1428.5,
             "direction": "BEARISH",
             "contract": "1450 PE",
-            "confidence": 56.3,
-            "option_entry": 23.8,
-            "option_target": 26.2,
-            "option_stop": 20.3,
+            "confidence": 56.8,
+            "option_entry": 22.2,
+            "option_target": 24.4,
+            "option_stop": 18.8,
             "lot_size": 700,
             "execution_plan": {
                 "required_lots": 2,
                 "required_qty": 1400,
-                "capital_required": 33372.66,
-                "gross_profit": 3337.27,
-                "total_taxes_fees": 132.32,
-                "net_profit": 3204.95
+                "capital_required": 31038.95,
+                "gross_profit": 3103.89,
+                "total_taxes_fees": 126.37,
+                "net_profit": 2977.53
+            }
+        },
+        {
+            "ticker": "SBIN",
+            "spot": 1074.0,
+            "direction": "BEARISH",
+            "contract": "1050 PE",
+            "confidence": 56.0,
+            "option_entry": 4.3,
+            "option_target": 4.8,
+            "option_stop": 3.7,
+            "lot_size": 1500,
+            "execution_plan": {
+                "required_lots": 4,
+                "required_qty": 6000,
+                "capital_required": 26090.41,
+                "gross_profit": 2609.04,
+                "total_taxes_fees": 113.74,
+                "net_profit": 2495.3
             }
         }
     ]
