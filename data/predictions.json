@@ -1,52 +1,52 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-11 04:53 IST"
+        "timestamp_ist": "2026-08-11 04:58 IST"
     },
     "signals": [
         {
             "ticker": "TCS",
-            "spot": 2435.9,
+            "spot": 2432.5,
             "direction": "BEARISH",
             "contract": "2400 PE",
-            "confidence": 59.6,
-            "option_entry": 5.0,
-            "option_target": 5.5,
-            "option_stop": 4.3,
+            "confidence": 58.4,
+            "option_entry": 5.8,
+            "option_target": 6.3,
+            "option_stop": 4.9,
             "lot_size": 175,
             "execution_plan": {
-                "required_lots": 24,
-                "required_qty": 4200,
-                "capital_required": 21077.3,
-                "gross_profit": 2107.73,
-                "total_taxes_fees": 100.96,
-                "net_profit": 2006.77
+                "required_lots": 21,
+                "required_qty": 3675,
+                "capital_required": 21172.48,
+                "gross_profit": 2117.25,
+                "total_taxes_fees": 101.2,
+                "net_profit": 2016.05
             }
         },
         {
-            "ticker": "INFY",
-            "spot": 1189.3,
+            "ticker": "ICICIBANK",
+            "spot": 1423.1,
             "direction": "BEARISH",
-            "contract": "1200 PE",
-            "confidence": 54.6,
-            "option_entry": 13.6,
-            "option_target": 15.0,
-            "option_stop": 11.6,
-            "lot_size": 400,
+            "contract": "1400 PE",
+            "confidence": 55.5,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 700,
             "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 1600,
-                "capital_required": 21776.55,
-                "gross_profit": 2177.65,
-                "total_taxes_fees": 102.74,
-                "net_profit": 2074.91
+                "required_lots": 16,
+                "required_qty": 11200,
+                "capital_required": 22400.0,
+                "gross_profit": 2240.0,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.67
             }
         },
         {
             "ticker": "ITC",
-            "spot": 280.8,
+            "spot": 280.6,
             "direction": "BEARISH",
             "contract": "280 PE",
-            "confidence": 54.6,
+            "confidence": 54.7,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
