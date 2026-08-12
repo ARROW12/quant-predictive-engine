@@ -1,63 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-11 10:52 IST"
+        "timestamp_ist": "2026-08-12 05:18 IST"
     },
     "signals": [
         {
-            "ticker": "SBIN",
-            "spot": 1066.8,
+            "ticker": "TCS",
+            "spot": 2410.9,
             "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 62.5,
-            "option_entry": 5.9,
-            "option_target": 6.5,
-            "option_stop": 5.0,
-            "lot_size": 1500,
+            "contract": "2400 PE",
+            "confidence": 58.2,
+            "option_entry": 8.3,
+            "option_target": 9.2,
+            "option_stop": 7.1,
+            "lot_size": 175,
             "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 4500,
-                "capital_required": 26498.29,
-                "gross_profit": 2649.83,
-                "total_taxes_fees": 114.78,
-                "net_profit": 2535.04
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 729.85,
-            "direction": "BEARISH",
-            "contract": "730 PE",
-            "confidence": 60.9,
-            "option_entry": 2.3,
-            "option_target": 2.5,
-            "option_stop": 2.0,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 17,
-                "required_qty": 9350,
-                "capital_required": 21513.13,
-                "gross_profit": 2151.31,
-                "total_taxes_fees": 102.07,
-                "net_profit": 2049.24
+                "required_lots": 15,
+                "required_qty": 2625,
+                "capital_required": 21860.29,
+                "gross_profit": 2186.03,
+                "total_taxes_fees": 102.96,
+                "net_profit": 2083.07
             }
         },
         {
             "ticker": "ITC",
-            "spot": 279.1,
+            "spot": 278.1,
             "direction": "BEARISH",
             "contract": "280 PE",
-            "confidence": 57.5,
-            "option_entry": 2.0,
-            "option_target": 2.2,
-            "option_stop": 1.7,
+            "confidence": 56.1,
+            "option_entry": 2.1,
+            "option_target": 2.3,
+            "option_stop": 1.8,
             "lot_size": 1600,
             "execution_plan": {
                 "required_lots": 7,
                 "required_qty": 11200,
-                "capital_required": 22400.0,
-                "gross_profit": 2240.0,
-                "total_taxes_fees": 104.33,
-                "net_profit": 2135.67
+                "capital_required": 23640.82,
+                "gross_profit": 2364.08,
+                "total_taxes_fees": 107.5,
+                "net_profit": 2256.59
             }
         }
     ]
