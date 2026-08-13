@@ -1,25 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-13 05:27 IST"
+        "timestamp_ist": "2026-08-13 06:55 IST"
     },
     "signals": [
         {
-            "ticker": "TCS",
-            "spot": 2343.3,
+            "ticker": "RELIANCE",
+            "spot": 1314.2,
             "direction": "BEARISH",
-            "contract": "2300 PE",
-            "confidence": 56.3,
-            "option_entry": 10.2,
-            "option_target": 11.2,
-            "option_stop": 8.7,
-            "lot_size": 175,
+            "contract": "1300 PE",
+            "confidence": 68.8,
+            "option_entry": 2.5,
+            "option_target": 2.8,
+            "option_stop": 2.2,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 34,
+                "required_qty": 8500,
+                "capital_required": 21555.84,
+                "gross_profit": 2155.58,
+                "total_taxes_fees": 102.18,
+                "net_profit": 2053.41
+            }
+        },
+        {
+            "ticker": "ICICIBANK",
+            "spot": 1414.5,
+            "direction": "BEARISH",
+            "contract": "1400 PE",
+            "confidence": 55.2,
+            "option_entry": 2.5,
+            "option_target": 2.8,
+            "option_stop": 2.1,
+            "lot_size": 700,
             "execution_plan": {
                 "required_lots": 12,
-                "required_qty": 2100,
-                "capital_required": 21402.15,
-                "gross_profit": 2140.21,
-                "total_taxes_fees": 101.79,
-                "net_profit": 2038.43
+                "required_qty": 8400,
+                "capital_required": 21064.17,
+                "gross_profit": 2106.42,
+                "total_taxes_fees": 100.92,
+                "net_profit": 2005.49
             }
         }
     ]
