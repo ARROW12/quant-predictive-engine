@@ -1,14 +1,33 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-14 05:19 IST"
+        "timestamp_ist": "2026-08-14 05:24 IST"
     },
     "signals": [
         {
+            "ticker": "ICICIBANK",
+            "spot": 1411.3,
+            "direction": "BEARISH",
+            "contract": "1400 PE",
+            "confidence": 57.0,
+            "option_entry": 2.7,
+            "option_target": 3.0,
+            "option_stop": 2.3,
+            "lot_size": 700,
+            "execution_plan": {
+                "required_lots": 11,
+                "required_qty": 7700,
+                "capital_required": 21126.73,
+                "gross_profit": 2112.67,
+                "total_taxes_fees": 101.08,
+                "net_profit": 2011.59
+            }
+        },
+        {
             "ticker": "SBIN",
-            "spot": 1071.8,
+            "spot": 1072.2,
             "direction": "BEARISH",
             "contract": "1050 PE",
-            "confidence": 56.2,
+            "confidence": 56.7,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
