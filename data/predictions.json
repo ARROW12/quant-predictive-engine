@@ -1,44 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-17 10:07 IST"
+        "timestamp_ist": "2026-08-17 10:34 IST"
     },
     "signals": [
         {
             "ticker": "ITC",
-            "spot": 273.4,
-            "direction": "BULLISH",
-            "contract": "270 CE",
-            "confidence": 57.9,
-            "option_entry": 3.7,
-            "option_target": 4.0,
-            "option_stop": 3.1,
-            "lot_size": 1600,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 6400,
-                "capital_required": 23492.53,
-                "gross_profit": 2349.25,
-                "total_taxes_fees": 107.12,
-                "net_profit": 2242.13
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1063.2,
+            "spot": 273.45,
             "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 56.7,
+            "contract": "270 PE",
+            "confidence": 67.2,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
-            "lot_size": 1500,
+            "lot_size": 1600,
             "execution_plan": {
-                "required_lots": 8,
-                "required_qty": 12000,
-                "capital_required": 24000.0,
-                "gross_profit": 2400.0,
-                "total_taxes_fees": 108.41,
-                "net_profit": 2291.59
+                "required_lots": 7,
+                "required_qty": 11200,
+                "capital_required": 22400.0,
+                "gross_profit": 2240.0,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.67
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2316.0,
+            "direction": "BEARISH",
+            "contract": "2300 PE",
+            "confidence": 55.0,
+            "option_entry": 9.3,
+            "option_target": 10.2,
+            "option_stop": 7.9,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 13,
+                "required_qty": 2275,
+                "capital_required": 21145.87,
+                "gross_profit": 2114.59,
+                "total_taxes_fees": 101.13,
+                "net_profit": 2013.45
             }
         }
     ]
