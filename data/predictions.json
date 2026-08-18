@@ -1,44 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-18 06:35 IST"
+        "timestamp_ist": "2026-08-18 07:22 IST"
     },
     "signals": [
         {
             "ticker": "SBIN",
-            "spot": 1056.8,
+            "spot": 1057.3,
             "direction": "BEARISH",
             "contract": "1050 PE",
-            "confidence": 60.5,
-            "option_entry": 2.7,
-            "option_target": 3.0,
-            "option_stop": 2.3,
+            "confidence": 57.8,
+            "option_entry": 2.6,
+            "option_target": 2.8,
+            "option_stop": 2.2,
             "lot_size": 1500,
             "execution_plan": {
                 "required_lots": 6,
                 "required_qty": 9000,
-                "capital_required": 24726.94,
-                "gross_profit": 2472.69,
-                "total_taxes_fees": 110.27,
-                "net_profit": 2362.43
+                "capital_required": 23127.87,
+                "gross_profit": 2312.79,
+                "total_taxes_fees": 106.19,
+                "net_profit": 2206.6
             }
         },
         {
             "ticker": "TCS",
-            "spot": 2286.1,
+            "spot": 2287.0,
             "direction": "BEARISH",
             "contract": "2300 PE",
-            "confidence": 55.7,
-            "option_entry": 24.8,
-            "option_target": 27.3,
-            "option_stop": 21.1,
+            "confidence": 54.1,
+            "option_entry": 24.3,
+            "option_target": 26.8,
+            "option_stop": 20.7,
             "lot_size": 175,
             "execution_plan": {
                 "required_lots": 5,
                 "required_qty": 875,
-                "capital_required": 21692.65,
-                "gross_profit": 2169.27,
-                "total_taxes_fees": 102.53,
-                "net_profit": 2066.74
+                "capital_required": 21284.87,
+                "gross_profit": 2128.49,
+                "total_taxes_fees": 101.49,
+                "net_profit": 2027.0
             }
         }
     ]
