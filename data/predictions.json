@@ -1,14 +1,33 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-19 10:12 IST"
+        "timestamp_ist": "2026-08-19 10:31 IST"
     },
     "signals": [
+        {
+            "ticker": "RELIANCE",
+            "spot": 1308.5,
+            "direction": "BEARISH",
+            "contract": "1300 PE",
+            "confidence": 58.6,
+            "option_entry": 2.6,
+            "option_target": 2.8,
+            "option_stop": 2.2,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 33,
+                "required_qty": 8250,
+                "capital_required": 21051.24,
+                "gross_profit": 2105.12,
+                "total_taxes_fees": 100.89,
+                "net_profit": 2004.23
+            }
+        },
         {
             "ticker": "ICICIBANK",
             "spot": 1400.0,
             "direction": "BEARISH",
             "contract": "1400 PE",
-            "confidence": 59.8,
+            "confidence": 56.9,
             "option_entry": 5.7,
             "option_target": 6.3,
             "option_stop": 4.9,
@@ -20,25 +39,6 @@
                 "gross_profit": 2402.3,
                 "total_taxes_fees": 108.47,
                 "net_profit": 2293.83
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1044.9,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 57.6,
-            "option_entry": 7.6,
-            "option_target": 8.3,
-            "option_stop": 6.4,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 22726.06,
-                "gross_profit": 2272.61,
-                "total_taxes_fees": 105.16,
-                "net_profit": 2167.44
             }
         }
     ]
