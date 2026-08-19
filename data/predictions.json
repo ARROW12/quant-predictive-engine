@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-19 09:50 IST"
+        "timestamp_ist": "2026-08-19 10:12 IST"
     },
     "signals": [
         {
@@ -8,37 +8,37 @@
             "spot": 1400.0,
             "direction": "BEARISH",
             "contract": "1400 PE",
-            "confidence": 56.7,
-            "option_entry": 5.8,
-            "option_target": 6.4,
+            "confidence": 59.8,
+            "option_entry": 5.7,
+            "option_target": 6.3,
             "option_stop": 4.9,
             "lot_size": 700,
             "execution_plan": {
                 "required_lots": 6,
                 "required_qty": 4200,
-                "capital_required": 24442.83,
-                "gross_profit": 2444.28,
-                "total_taxes_fees": 109.54,
-                "net_profit": 2334.74
+                "capital_required": 24022.96,
+                "gross_profit": 2402.3,
+                "total_taxes_fees": 108.47,
+                "net_profit": 2293.83
             }
         },
         {
-            "ticker": "RELIANCE",
-            "spot": 1308.5,
+            "ticker": "SBIN",
+            "spot": 1044.9,
             "direction": "BEARISH",
-            "contract": "1300 PE",
-            "confidence": 55.8,
-            "option_entry": 2.7,
-            "option_target": 2.9,
-            "option_stop": 2.3,
-            "lot_size": 250,
+            "contract": "1050 PE",
+            "confidence": 57.6,
+            "option_entry": 7.6,
+            "option_target": 8.3,
+            "option_stop": 6.4,
+            "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 32,
-                "required_qty": 8000,
-                "capital_required": 21331.53,
-                "gross_profit": 2133.15,
-                "total_taxes_fees": 101.61,
-                "net_profit": 2031.55
+                "required_lots": 2,
+                "required_qty": 3000,
+                "capital_required": 22726.06,
+                "gross_profit": 2272.61,
+                "total_taxes_fees": 105.16,
+                "net_profit": 2167.44
             }
         }
     ]
