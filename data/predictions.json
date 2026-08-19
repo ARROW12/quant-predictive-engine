@@ -1,82 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-19 09:15 IST"
+        "timestamp_ist": "2026-08-19 09:50 IST"
     },
     "signals": [
         {
             "ticker": "ICICIBANK",
-            "spot": 1397.9,
+            "spot": 1400.0,
             "direction": "BEARISH",
             "contract": "1400 PE",
-            "confidence": 58.0,
-            "option_entry": 6.8,
-            "option_target": 7.5,
-            "option_stop": 5.8,
+            "confidence": 56.7,
+            "option_entry": 5.8,
+            "option_target": 6.4,
+            "option_stop": 4.9,
             "lot_size": 700,
             "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 3500,
-                "capital_required": 23954.89,
-                "gross_profit": 2395.49,
-                "total_taxes_fees": 108.3,
-                "net_profit": 2287.19
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1043.3,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 56.3,
-            "option_entry": 8.8,
-            "option_target": 9.6,
-            "option_stop": 7.5,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 26307.66,
-                "gross_profit": 2630.77,
-                "total_taxes_fees": 114.3,
-                "net_profit": 2516.47
+                "required_lots": 6,
+                "required_qty": 4200,
+                "capital_required": 24442.83,
+                "gross_profit": 2444.28,
+                "total_taxes_fees": 109.54,
+                "net_profit": 2334.74
             }
         },
         {
             "ticker": "RELIANCE",
-            "spot": 1308.6,
+            "spot": 1308.5,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 54.5,
-            "option_entry": 2.6,
+            "confidence": 55.8,
+            "option_entry": 2.7,
             "option_target": 2.9,
-            "option_stop": 2.2,
+            "option_stop": 2.3,
             "lot_size": 250,
             "execution_plan": {
-                "required_lots": 33,
-                "required_qty": 8250,
-                "capital_required": 21574.32,
-                "gross_profit": 2157.43,
-                "total_taxes_fees": 102.23,
-                "net_profit": 2055.21
-            }
-        },
-        {
-            "ticker": "ITC",
-            "spot": 266.2,
-            "direction": "BEARISH",
-            "contract": "270 PE",
-            "confidence": 54.3,
-            "option_entry": 3.7,
-            "option_target": 4.1,
-            "option_stop": 3.2,
-            "lot_size": 1600,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 6400,
-                "capital_required": 23976.74,
-                "gross_profit": 2397.67,
-                "total_taxes_fees": 108.35,
-                "net_profit": 2289.32
+                "required_lots": 32,
+                "required_qty": 8000,
+                "capital_required": 21331.53,
+                "gross_profit": 2133.15,
+                "total_taxes_fees": 101.61,
+                "net_profit": 2031.55
             }
         }
     ]
