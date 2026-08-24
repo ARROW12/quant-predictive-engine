@@ -1,52 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-24 04:28 IST"
+        "timestamp_ist": "2026-08-24 04:35 IST"
     },
     "signals": [
-        {
-            "ticker": "TCS",
-            "spot": 2316.4,
-            "direction": "BULLISH",
-            "contract": "2300 CE",
-            "confidence": 60.5,
-            "option_entry": 24.4,
-            "option_target": 26.8,
-            "option_stop": 20.7,
-            "lot_size": 175,
-            "execution_plan": {
-                "required_lots": 5,
-                "required_qty": 875,
-                "capital_required": 21339.68,
-                "gross_profit": 2133.97,
-                "total_taxes_fees": 101.63,
-                "net_profit": 2032.34
-            }
-        },
-        {
-            "ticker": "SBIN",
-            "spot": 1044.2,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 59.0,
-            "option_entry": 8.0,
-            "option_target": 8.9,
-            "option_stop": 6.8,
-            "lot_size": 1500,
-            "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 3000,
-                "capital_required": 24142.7,
-                "gross_profit": 2414.27,
-                "total_taxes_fees": 108.78,
-                "net_profit": 2305.49
-            }
-        },
         {
             "ticker": "RELIANCE",
             "spot": 1313.4,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 56.0,
+            "confidence": 59.7,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -61,30 +23,30 @@
             }
         },
         {
-            "ticker": "INFY",
-            "spot": 1138.8,
+            "ticker": "TCS",
+            "spot": 2305.9,
             "direction": "BULLISH",
-            "contract": "1150 CE",
-            "confidence": 54.8,
-            "option_entry": 5.3,
-            "option_target": 5.8,
-            "option_stop": 4.5,
-            "lot_size": 400,
+            "contract": "2300 CE",
+            "confidence": 56.5,
+            "option_entry": 18.1,
+            "option_target": 19.9,
+            "option_stop": 15.4,
+            "lot_size": 175,
             "execution_plan": {
-                "required_lots": 10,
-                "required_qty": 4000,
-                "capital_required": 21030.42,
-                "gross_profit": 2103.04,
-                "total_taxes_fees": 100.84,
-                "net_profit": 2002.2
+                "required_lots": 7,
+                "required_qty": 1225,
+                "capital_required": 22204.51,
+                "gross_profit": 2220.45,
+                "total_taxes_fees": 103.83,
+                "net_profit": 2116.62
             }
         },
         {
             "ticker": "ITC",
-            "spot": 269.45,
+            "spot": 269.3,
             "direction": "BEARISH",
             "contract": "270 PE",
-            "confidence": 54.4,
+            "confidence": 55.4,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -96,6 +58,25 @@
                 "gross_profit": 2240.0,
                 "total_taxes_fees": 104.33,
                 "net_profit": 2135.67
+            }
+        },
+        {
+            "ticker": "HDFCBANK",
+            "spot": 730.2,
+            "direction": "BULLISH",
+            "contract": "730 CE",
+            "confidence": 55.3,
+            "option_entry": 3.7,
+            "option_target": 4.1,
+            "option_stop": 3.2,
+            "lot_size": 550,
+            "execution_plan": {
+                "required_lots": 11,
+                "required_qty": 6050,
+                "capital_required": 22523.6,
+                "gross_profit": 2252.36,
+                "total_taxes_fees": 104.65,
+                "net_profit": 2147.71
             }
         }
     ]
