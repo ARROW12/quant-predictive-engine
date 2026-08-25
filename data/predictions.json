@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-25 04:23 IST"
+        "timestamp_ist": "2026-08-25 04:29 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 1303.1,
             "direction": "BEARISH",
             "contract": "1300 PE",
-            "confidence": 58.4,
+            "confidence": 59.8,
             "option_entry": 3.1,
             "option_target": 3.4,
             "option_stop": 2.6,
@@ -16,10 +16,29 @@
             "execution_plan": {
                 "required_lots": 28,
                 "required_qty": 7000,
-                "capital_required": 21686.56,
-                "gross_profit": 2168.66,
-                "total_taxes_fees": 102.51,
-                "net_profit": 2066.14
+                "capital_required": 21682.03,
+                "gross_profit": 2168.2,
+                "total_taxes_fees": 102.5,
+                "net_profit": 2065.7
+            }
+        },
+        {
+            "ticker": "HDFCBANK",
+            "spot": 727.4,
+            "direction": "BEARISH",
+            "contract": "730 PE",
+            "confidence": 56.3,
+            "option_entry": 3.8,
+            "option_target": 4.2,
+            "option_stop": 3.2,
+            "lot_size": 550,
+            "execution_plan": {
+                "required_lots": 11,
+                "required_qty": 6050,
+                "capital_required": 22946.07,
+                "gross_profit": 2294.61,
+                "total_taxes_fees": 105.72,
+                "net_profit": 2188.88
             }
         }
     ]
