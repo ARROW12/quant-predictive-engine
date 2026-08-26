@@ -1,25 +1,25 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-25 10:35 IST"
+        "timestamp_ist": "2026-08-26 04:24 IST"
     },
     "signals": [
         {
-            "ticker": "HDFCBANK",
-            "spot": 724.0,
+            "ticker": "RELIANCE",
+            "spot": 1310.0,
             "direction": "BEARISH",
-            "contract": "720 PE",
+            "contract": "1300 PE",
             "confidence": 58.1,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
-            "lot_size": 550,
+            "lot_size": 250,
             "execution_plan": {
-                "required_lots": 20,
-                "required_qty": 11000,
-                "capital_required": 22000.0,
-                "gross_profit": 2200.0,
-                "total_taxes_fees": 103.31,
-                "net_profit": 2096.69
+                "required_lots": 43,
+                "required_qty": 10750,
+                "capital_required": 21500.0,
+                "gross_profit": 2150.0,
+                "total_taxes_fees": 102.04,
+                "net_profit": 2047.96
             }
         }
     ]
