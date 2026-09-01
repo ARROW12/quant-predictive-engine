@@ -1,44 +1,82 @@
 {
     "meta": {
-        "timestamp_ist": "2026-08-31 17:27 IST"
+        "timestamp_ist": "2026-09-01 08:55 IST"
     },
     "signals": [
         {
             "ticker": "ICICIBANK",
-            "spot": 1443.2,
+            "spot": 1426.8,
             "direction": "BEARISH",
             "contract": "1450 PE",
-            "confidence": 57.8,
-            "option_entry": 10.3,
-            "option_target": 11.3,
-            "option_stop": 8.7,
+            "confidence": 59.0,
+            "option_entry": 23.7,
+            "option_target": 26.1,
+            "option_stop": 20.1,
             "lot_size": 700,
             "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 2100,
-                "capital_required": 21535.52,
-                "gross_profit": 2153.55,
-                "total_taxes_fees": 102.13,
-                "net_profit": 2051.42
+                "required_lots": 2,
+                "required_qty": 1400,
+                "capital_required": 33170.52,
+                "gross_profit": 3317.05,
+                "total_taxes_fees": 131.8,
+                "net_profit": 3185.25
             }
         },
         {
-            "ticker": "ITC",
-            "spot": 264.25,
+            "ticker": "HDFCBANK",
+            "spot": 707.9,
             "direction": "BEARISH",
-            "contract": "260 PE",
-            "confidence": 55.3,
-            "option_entry": 2.0,
-            "option_target": 2.2,
-            "option_stop": 1.7,
-            "lot_size": 1600,
+            "contract": "710 PE",
+            "confidence": 58.2,
+            "option_entry": 5.7,
+            "option_target": 6.3,
+            "option_stop": 4.8,
+            "lot_size": 550,
             "execution_plan": {
                 "required_lots": 7,
-                "required_qty": 11200,
-                "capital_required": 22400.0,
-                "gross_profit": 2240.0,
-                "total_taxes_fees": 104.33,
-                "net_profit": 2135.67
+                "required_qty": 3850,
+                "capital_required": 21909.05,
+                "gross_profit": 2190.9,
+                "total_taxes_fees": 103.08,
+                "net_profit": 2087.83
+            }
+        },
+        {
+            "ticker": "TCS",
+            "spot": 2360.0,
+            "direction": "BULLISH",
+            "contract": "2400 CE",
+            "confidence": 54.5,
+            "option_entry": 21.7,
+            "option_target": 23.9,
+            "option_stop": 18.5,
+            "lot_size": 175,
+            "execution_plan": {
+                "required_lots": 6,
+                "required_qty": 1050,
+                "capital_required": 22792.41,
+                "gross_profit": 2279.24,
+                "total_taxes_fees": 105.33,
+                "net_profit": 2173.91
+            }
+        },
+        {
+            "ticker": "INFY",
+            "spot": 1145.5,
+            "direction": "BEARISH",
+            "contract": "1150 PE",
+            "confidence": 54.0,
+            "option_entry": 10.5,
+            "option_target": 11.6,
+            "option_stop": 8.9,
+            "lot_size": 400,
+            "execution_plan": {
+                "required_lots": 5,
+                "required_qty": 2000,
+                "capital_required": 21037.89,
+                "gross_profit": 2103.79,
+                "total_taxes_fees": 100.86,
+                "net_profit": 2002.93
             }
         }
     ]
