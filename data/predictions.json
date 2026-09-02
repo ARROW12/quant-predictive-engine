@@ -1,44 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-09-01 14:37 IST"
+        "timestamp_ist": "2026-09-02 08:08 IST"
     },
     "signals": [
         {
             "ticker": "HDFCBANK",
-            "spot": 709.45,
+            "spot": 703.15,
             "direction": "BEARISH",
-            "contract": "710 PE",
-            "confidence": 59.9,
-            "option_entry": 4.7,
-            "option_target": 5.2,
-            "option_stop": 4.0,
+            "contract": "700 PE",
+            "confidence": 55.1,
+            "option_entry": 4.4,
+            "option_target": 4.8,
+            "option_stop": 3.7,
             "lot_size": 550,
             "execution_plan": {
                 "required_lots": 9,
                 "required_qty": 4950,
-                "capital_required": 23498.65,
-                "gross_profit": 2349.86,
-                "total_taxes_fees": 107.13,
-                "net_profit": 2242.73
+                "capital_required": 21808.5,
+                "gross_profit": 2180.85,
+                "total_taxes_fees": 102.82,
+                "net_profit": 2078.03
             }
         },
         {
-            "ticker": "TCS",
-            "spot": 2355.4,
+            "ticker": "SBIN",
+            "spot": 1019.8,
             "direction": "BEARISH",
-            "contract": "2400 PE",
-            "confidence": 57.0,
-            "option_entry": 55.6,
-            "option_target": 61.2,
-            "option_stop": 47.3,
-            "lot_size": 175,
+            "contract": "1000 PE",
+            "confidence": 55.0,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 1500,
             "execution_plan": {
-                "required_lots": 3,
-                "required_qty": 525,
-                "capital_required": 29199.68,
-                "gross_profit": 2919.97,
-                "total_taxes_fees": 121.67,
-                "net_profit": 2798.29
+                "required_lots": 8,
+                "required_qty": 12000,
+                "capital_required": 24000.0,
+                "gross_profit": 2400.0,
+                "total_taxes_fees": 108.41,
+                "net_profit": 2291.59
             }
         }
     ]
