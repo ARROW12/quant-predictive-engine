@@ -1,26 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-09-21 09:26 IST"
+        "timestamp_ist": "2026-09-21 15:58 IST"
     },
-    "signals": [
-        {
-            "ticker": "INFY",
-            "spot": 1039.0,
-            "direction": "BEARISH",
-            "contract": "1050 PE",
-            "confidence": 58.3,
-            "option_entry": 15.3,
-            "option_target": 16.8,
-            "option_stop": 13.0,
-            "lot_size": 400,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 1600,
-                "capital_required": 24464.87,
-                "gross_profit": 2446.49,
-                "total_taxes_fees": 109.6,
-                "net_profit": 2336.89
-            }
-        }
-    ]
+    "signals": []
 }
