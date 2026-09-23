@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-09-23 14:01 IST"
+        "timestamp_ist": "2026-09-23 14:47 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 1244.8,
             "direction": "BEARISH",
             "contract": "1250 PE",
-            "confidence": 66.7,
+            "confidence": 66.9,
             "option_entry": 7.9,
             "option_target": 8.7,
             "option_stop": 6.7,
@@ -27,7 +27,7 @@
             "spot": 1336.0,
             "direction": "BEARISH",
             "contract": "1350 PE",
-            "confidence": 62.7,
+            "confidence": 63.0,
             "option_entry": 14.6,
             "option_target": 16.0,
             "option_stop": 12.4,
@@ -46,7 +46,7 @@
             "spot": 1016.7,
             "direction": "BEARISH",
             "contract": "1000 PE",
-            "confidence": 54.7,
+            "confidence": 54.4,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
