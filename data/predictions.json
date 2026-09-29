@@ -1,14 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-09-29 10:15 IST"
+        "timestamp_ist": "2026-09-29 16:23 IST"
     },
     "signals": [
         {
             "ticker": "HDFCBANK",
-            "spot": 713.55,
+            "spot": 713.45,
             "direction": "BEARISH",
             "contract": "710 PE",
-            "confidence": 58.3,
+            "confidence": 58.5,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -23,22 +23,22 @@
             }
         },
         {
-            "ticker": "INFY",
-            "spot": 986.4,
+            "ticker": "ITC",
+            "spot": 264.9,
             "direction": "BEARISH",
-            "contract": "990 PE",
-            "confidence": 56.8,
-            "option_entry": 8.3,
-            "option_target": 9.1,
-            "option_stop": 7.0,
-            "lot_size": 400,
+            "contract": "260 PE",
+            "confidence": 58.4,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 1600,
             "execution_plan": {
                 "required_lots": 7,
-                "required_qty": 2800,
-                "capital_required": 23166.39,
-                "gross_profit": 2316.64,
-                "total_taxes_fees": 106.29,
-                "net_profit": 2210.35
+                "required_qty": 11200,
+                "capital_required": 22400.0,
+                "gross_profit": 2240.0,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.67
             }
         }
     ]
