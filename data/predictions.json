@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-09-30 10:00 IST"
+        "timestamp_ist": "2026-09-30 10:06 IST"
     },
     "signals": [
         {
@@ -9,17 +9,17 @@
             "direction": "BULLISH",
             "contract": "1300 CE",
             "confidence": 66.4,
-            "option_entry": 25.7,
-            "option_target": 28.3,
-            "option_stop": 21.8,
+            "option_entry": 25.2,
+            "option_target": 27.7,
+            "option_stop": 21.4,
             "lot_size": 700,
             "execution_plan": {
                 "required_lots": 2,
                 "required_qty": 1400,
-                "capital_required": 35982.52,
-                "gross_profit": 3598.25,
-                "total_taxes_fees": 138.97,
-                "net_profit": 3459.28
+                "capital_required": 35264.79,
+                "gross_profit": 3526.48,
+                "total_taxes_fees": 137.14,
+                "net_profit": 3389.34
             }
         },
         {
@@ -27,18 +27,18 @@
             "spot": 1188.3,
             "direction": "BEARISH",
             "contract": "1200 PE",
-            "confidence": 61.9,
-            "option_entry": 13.8,
-            "option_target": 15.2,
-            "option_stop": 11.7,
+            "confidence": 60.8,
+            "option_entry": 13.2,
+            "option_target": 14.6,
+            "option_stop": 11.3,
             "lot_size": 250,
             "execution_plan": {
                 "required_lots": 7,
                 "required_qty": 1750,
-                "capital_required": 24146.36,
-                "gross_profit": 2414.64,
-                "total_taxes_fees": 108.79,
-                "net_profit": 2305.85
+                "capital_required": 23180.56,
+                "gross_profit": 2318.06,
+                "total_taxes_fees": 106.32,
+                "net_profit": 2211.73
             }
         },
         {
@@ -46,18 +46,18 @@
             "spot": 2057.6,
             "direction": "BEARISH",
             "contract": "2100 PE",
-            "confidence": 57.3,
-            "option_entry": 48.9,
-            "option_target": 53.8,
-            "option_stop": 41.5,
+            "confidence": 56.1,
+            "option_entry": 43.1,
+            "option_target": 47.5,
+            "option_stop": 36.7,
             "lot_size": 175,
             "execution_plan": {
                 "required_lots": 3,
                 "required_qty": 525,
-                "capital_required": 25659.97,
-                "gross_profit": 2566.0,
-                "total_taxes_fees": 112.65,
-                "net_profit": 2453.35
+                "capital_required": 22652.5,
+                "gross_profit": 2265.25,
+                "total_taxes_fees": 104.98,
+                "net_profit": 2160.27
             }
         }
     ]
