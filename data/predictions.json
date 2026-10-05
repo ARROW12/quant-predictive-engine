@@ -1,44 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-02 16:08 IST"
+        "timestamp_ist": "2026-10-05 10:51 IST"
     },
     "signals": [
         {
-            "ticker": "ICICIBANK",
-            "spot": 1313.4,
-            "direction": "BULLISH",
-            "contract": "1300 CE",
-            "confidence": 62.2,
-            "option_entry": 16.9,
-            "option_target": 18.6,
-            "option_stop": 14.4,
-            "lot_size": 700,
+            "ticker": "HDFCBANK",
+            "spot": 704.85,
+            "direction": "BEARISH",
+            "contract": "700 PE",
+            "confidence": 61.9,
+            "option_entry": 3.1,
+            "option_target": 3.4,
+            "option_stop": 2.7,
+            "lot_size": 550,
             "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 1400,
-                "capital_required": 23711.62,
-                "gross_profit": 2371.16,
-                "total_taxes_fees": 107.68,
-                "net_profit": 2263.48
+                "required_lots": 13,
+                "required_qty": 7150,
+                "capital_required": 22400.98,
+                "gross_profit": 2240.1,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.76
             }
         },
         {
-            "ticker": "INFY",
-            "spot": 1022.0,
+            "ticker": "RELIANCE",
+            "spot": 1188.6,
             "direction": "BULLISH",
-            "contract": "1000 CE",
-            "confidence": 54.1,
-            "option_entry": 27.1,
-            "option_target": 29.8,
-            "option_stop": 23.0,
-            "lot_size": 400,
+            "contract": "1200 CE",
+            "confidence": 57.0,
+            "option_entry": 3.4,
+            "option_target": 3.7,
+            "option_stop": 2.9,
+            "lot_size": 250,
             "execution_plan": {
-                "required_lots": 2,
-                "required_qty": 800,
-                "capital_required": 21678.03,
-                "gross_profit": 2167.8,
-                "total_taxes_fees": 102.49,
-                "net_profit": 2065.31
+                "required_lots": 25,
+                "required_qty": 6250,
+                "capital_required": 21205.17,
+                "gross_profit": 2120.52,
+                "total_taxes_fees": 101.28,
+                "net_profit": 2019.23
             }
         }
     ]
