@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-08 11:02 IST"
+        "timestamp_ist": "2026-10-08 17:16 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 940.3,
             "direction": "BEARISH",
             "contract": "940 PE",
-            "confidence": 57.7,
+            "confidence": 58.7,
             "option_entry": 5.7,
             "option_target": 6.3,
             "option_stop": 4.9,
@@ -27,7 +27,7 @@
             "spot": 2065.6,
             "direction": "BEARISH",
             "contract": "2100 PE",
-            "confidence": 55.9,
+            "confidence": 55.6,
             "option_entry": 37.0,
             "option_target": 40.7,
             "option_stop": 31.5,
