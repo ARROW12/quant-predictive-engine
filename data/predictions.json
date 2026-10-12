@@ -1,33 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-12 11:28 IST"
+        "timestamp_ist": "2026-10-12 19:40 IST"
     },
     "signals": [
-        {
-            "ticker": "HDFCBANK",
-            "spot": 701.5,
-            "direction": "BEARISH",
-            "contract": "700 PE",
-            "confidence": 59.3,
-            "option_entry": 2.6,
-            "option_target": 2.9,
-            "option_stop": 2.2,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 15,
-                "required_qty": 8250,
-                "capital_required": 21704.34,
-                "gross_profit": 2170.43,
-                "total_taxes_fees": 102.56,
-                "net_profit": 2067.88
-            }
-        },
         {
             "ticker": "ICICIBANK",
             "spot": 1339.8,
             "direction": "BEARISH",
             "contract": "1350 PE",
-            "confidence": 57.6,
+            "confidence": 60.4,
             "option_entry": 12.6,
             "option_target": 13.9,
             "option_stop": 10.7,
@@ -39,6 +20,25 @@
                 "gross_profit": 2650.0,
                 "total_taxes_fees": 114.79,
                 "net_profit": 2535.21
+            }
+        },
+        {
+            "ticker": "HDFCBANK",
+            "spot": 701.5,
+            "direction": "BEARISH",
+            "contract": "700 PE",
+            "confidence": 59.2,
+            "option_entry": 2.6,
+            "option_target": 2.9,
+            "option_stop": 2.2,
+            "lot_size": 550,
+            "execution_plan": {
+                "required_lots": 15,
+                "required_qty": 8250,
+                "capital_required": 21704.34,
+                "gross_profit": 2170.43,
+                "total_taxes_fees": 102.56,
+                "net_profit": 2067.88
             }
         },
         {
@@ -58,25 +58,6 @@
                 "gross_profit": 2149.13,
                 "total_taxes_fees": 102.01,
                 "net_profit": 2047.11
-            }
-        },
-        {
-            "ticker": "INFY",
-            "spot": 1014.2,
-            "direction": "BULLISH",
-            "contract": "1000 CE",
-            "confidence": 55.4,
-            "option_entry": 17.4,
-            "option_target": 19.1,
-            "option_stop": 14.8,
-            "lot_size": 400,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 1600,
-                "capital_required": 27784.96,
-                "gross_profit": 2778.5,
-                "total_taxes_fees": 118.07,
-                "net_profit": 2660.43
             }
         }
     ]
