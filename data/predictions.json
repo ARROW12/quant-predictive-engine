@@ -1,101 +1,44 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-15 14:44 IST"
+        "timestamp_ist": "2026-10-16 08:30 IST"
     },
     "signals": [
         {
             "ticker": "INFY",
-            "spot": 1107.2,
+            "spot": 1151.25,
             "direction": "BULLISH",
-            "contract": "1100 CE",
-            "confidence": 64.9,
-            "option_entry": 14.0,
-            "option_target": 15.4,
-            "option_stop": 11.9,
+            "contract": "1150 CE",
+            "confidence": 55.4,
+            "option_entry": 14.8,
+            "option_target": 16.2,
+            "option_stop": 12.5,
             "lot_size": 400,
             "execution_plan": {
                 "required_lots": 4,
                 "required_qty": 1600,
-                "capital_required": 22457.64,
-                "gross_profit": 2245.76,
-                "total_taxes_fees": 104.48,
-                "net_profit": 2141.29
+                "capital_required": 23622.93,
+                "gross_profit": 2362.29,
+                "total_taxes_fees": 107.45,
+                "net_profit": 2254.84
             }
         },
         {
-            "ticker": "ITC",
-            "spot": 263.2,
+            "ticker": "SBIN",
+            "spot": 959.35,
             "direction": "BULLISH",
-            "contract": "260 CE",
-            "confidence": 61.8,
-            "option_entry": 3.7,
-            "option_target": 4.1,
-            "option_stop": 3.1,
-            "lot_size": 1600,
-            "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 6400,
-                "capital_required": 23696.93,
-                "gross_profit": 2369.69,
-                "total_taxes_fees": 107.64,
-                "net_profit": 2262.05
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 725.05,
-            "direction": "BEARISH",
-            "contract": "730 PE",
-            "confidence": 58.3,
-            "option_entry": 6.3,
-            "option_target": 7.0,
-            "option_stop": 5.4,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 3850,
-                "capital_required": 24413.46,
-                "gross_profit": 2441.35,
-                "total_taxes_fees": 109.47,
-                "net_profit": 2331.88
-            }
-        },
-        {
-            "ticker": "RELIANCE",
-            "spot": 1204.7,
-            "direction": "BULLISH",
-            "contract": "1200 CE",
-            "confidence": 56.6,
-            "option_entry": 10.3,
-            "option_target": 11.3,
-            "option_stop": 8.8,
-            "lot_size": 250,
-            "execution_plan": {
-                "required_lots": 9,
-                "required_qty": 2250,
-                "capital_required": 23178.12,
-                "gross_profit": 2317.81,
-                "total_taxes_fees": 106.32,
-                "net_profit": 2211.5
-            }
-        },
-        {
-            "ticker": "TCS",
-            "spot": 2358.1,
-            "direction": "BEARISH",
-            "contract": "2400 PE",
-            "confidence": 55.2,
-            "option_entry": 45.9,
-            "option_target": 50.5,
-            "option_stop": 39.0,
-            "lot_size": 175,
+            "contract": "960 CE",
+            "confidence": 54.9,
+            "option_entry": 6.4,
+            "option_target": 7.1,
+            "option_stop": 5.5,
+            "lot_size": 1500,
             "execution_plan": {
                 "required_lots": 3,
-                "required_qty": 525,
-                "capital_required": 24111.5,
-                "gross_profit": 2411.15,
-                "total_taxes_fees": 108.7,
-                "net_profit": 2302.45
+                "required_qty": 4500,
+                "capital_required": 28982.84,
+                "gross_profit": 2898.28,
+                "total_taxes_fees": 121.12,
+                "net_profit": 2777.16
             }
         }
     ]
