@@ -1,6 +1,45 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-16 13:30 IST"
+        "timestamp_ist": "2026-10-16 14:39 IST"
     },
-    "signals": []
+    "signals": [
+        {
+            "ticker": "RELIANCE",
+            "spot": 1207.0,
+            "direction": "BEARISH",
+            "contract": "1200 PE",
+            "confidence": 54.6,
+            "option_entry": 5.3,
+            "option_target": 5.8,
+            "option_stop": 4.5,
+            "lot_size": 250,
+            "execution_plan": {
+                "required_lots": 16,
+                "required_qty": 4000,
+                "capital_required": 21150.08,
+                "gross_profit": 2115.01,
+                "total_taxes_fees": 101.14,
+                "net_profit": 2013.86
+            }
+        },
+        {
+            "ticker": "ICICIBANK",
+            "spot": 1392.9,
+            "direction": "BULLISH",
+            "contract": "1400 CE",
+            "confidence": 54.1,
+            "option_entry": 5.0,
+            "option_target": 5.5,
+            "option_stop": 4.2,
+            "lot_size": 700,
+            "execution_plan": {
+                "required_lots": 7,
+                "required_qty": 4900,
+                "capital_required": 24433.63,
+                "gross_profit": 2443.36,
+                "total_taxes_fees": 109.52,
+                "net_profit": 2333.84
+            }
+        }
+    ]
 }
