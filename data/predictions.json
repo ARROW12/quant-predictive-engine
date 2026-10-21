@@ -1,14 +1,14 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-21 08:53 IST"
+        "timestamp_ist": "2026-10-21 08:59 IST"
     },
     "signals": [
         {
             "ticker": "ITC",
-            "spot": 260.55,
+            "spot": 260.5,
             "direction": "BEARISH",
             "contract": "260 PE",
-            "confidence": 65.3,
+            "confidence": 64.3,
             "option_entry": 2.0,
             "option_target": 2.2,
             "option_stop": 1.7,
@@ -23,22 +23,22 @@
             }
         },
         {
-            "ticker": "INFY",
-            "spot": 1163.4,
-            "direction": "BEARISH",
-            "contract": "1150 PE",
-            "confidence": 61.3,
-            "option_entry": 8.7,
-            "option_target": 9.6,
-            "option_stop": 7.4,
-            "lot_size": 400,
+            "ticker": "TCS",
+            "spot": 2513.4,
+            "direction": "BULLISH",
+            "contract": "2500 CE",
+            "confidence": 57.0,
+            "option_entry": 36.0,
+            "option_target": 39.6,
+            "option_stop": 30.6,
+            "lot_size": 175,
             "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 2800,
-                "capital_required": 24330.97,
-                "gross_profit": 2433.1,
-                "total_taxes_fees": 109.26,
-                "net_profit": 2323.84
+                "required_lots": 4,
+                "required_qty": 700,
+                "capital_required": 25194.38,
+                "gross_profit": 2519.44,
+                "total_taxes_fees": 111.46,
+                "net_profit": 2407.98
             }
         }
     ]
