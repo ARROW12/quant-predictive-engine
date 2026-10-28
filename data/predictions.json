@@ -1,44 +1,25 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-28 10:09 IST"
+        "timestamp_ist": "2026-10-28 16:29 IST"
     },
     "signals": [
         {
-            "ticker": "INFY",
-            "spot": 1113.5,
+            "ticker": "RELIANCE",
+            "spot": 1158.1,
             "direction": "BEARISH",
-            "contract": "1100 PE",
-            "confidence": 55.1,
-            "option_entry": 4.6,
-            "option_target": 5.0,
-            "option_stop": 3.9,
-            "lot_size": 400,
+            "contract": "1150 PE",
+            "confidence": 54.7,
+            "option_entry": 7.1,
+            "option_target": 7.8,
+            "option_stop": 6.0,
+            "lot_size": 250,
             "execution_plan": {
                 "required_lots": 12,
-                "required_qty": 4800,
-                "capital_required": 21856.4,
-                "gross_profit": 2185.64,
-                "total_taxes_fees": 102.95,
-                "net_profit": 2082.69
-            }
-        },
-        {
-            "ticker": "HDFCBANK",
-            "spot": 685.4,
-            "direction": "BULLISH",
-            "contract": "690 CE",
-            "confidence": 54.5,
-            "option_entry": 3.1,
-            "option_target": 3.4,
-            "option_stop": 2.6,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 13,
-                "required_qty": 7150,
-                "capital_required": 22166.55,
-                "gross_profit": 2216.65,
-                "total_taxes_fees": 103.74,
-                "net_profit": 2112.92
+                "required_qty": 3000,
+                "capital_required": 21267.2,
+                "gross_profit": 2126.72,
+                "total_taxes_fees": 101.44,
+                "net_profit": 2025.28
             }
         }
     ]
