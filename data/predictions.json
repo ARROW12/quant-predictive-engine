@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-10-30 10:28 IST"
+        "timestamp_ist": "2026-10-30 10:35 IST"
     },
     "signals": [
         {
@@ -8,18 +8,18 @@
             "spot": 2518.0,
             "direction": "BEARISH",
             "contract": "2500 PE",
-            "confidence": 56.7,
-            "option_entry": 8.8,
+            "confidence": 56.8,
+            "option_entry": 8.7,
             "option_target": 9.6,
             "option_stop": 7.4,
             "lot_size": 175,
             "execution_plan": {
                 "required_lots": 14,
                 "required_qty": 2450,
-                "capital_required": 21445.06,
-                "gross_profit": 2144.51,
-                "total_taxes_fees": 101.9,
-                "net_profit": 2042.61
+                "capital_required": 21361.97,
+                "gross_profit": 2136.2,
+                "total_taxes_fees": 101.68,
+                "net_profit": 2034.51
             }
         }
     ]
