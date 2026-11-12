@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-11-12 11:59 IST"
+        "timestamp_ist": "2026-11-12 17:58 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 2433.0,
             "direction": "BULLISH",
             "contract": "2400 CE",
-            "confidence": 55.3,
+            "confidence": 56.3,
             "option_entry": 39.0,
             "option_target": 42.9,
             "option_stop": 33.2,
@@ -23,30 +23,11 @@
             }
         },
         {
-            "ticker": "ICICIBANK",
-            "spot": 1588.3,
-            "direction": "BULLISH",
-            "contract": "1600 CE",
-            "confidence": 54.9,
-            "option_entry": 5.0,
-            "option_target": 5.5,
-            "option_stop": 4.2,
-            "lot_size": 700,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 4900,
-                "capital_required": 24328.43,
-                "gross_profit": 2432.84,
-                "total_taxes_fees": 109.25,
-                "net_profit": 2323.59
-            }
-        },
-        {
             "ticker": "INFY",
             "spot": 1149.6,
             "direction": "BULLISH",
             "contract": "1150 CE",
-            "confidence": 54.2,
+            "confidence": 54.3,
             "option_entry": 7.9,
             "option_target": 8.7,
             "option_stop": 6.8,
