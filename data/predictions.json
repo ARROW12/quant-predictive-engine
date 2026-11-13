@@ -1,44 +1,25 @@
 {
     "meta": {
-        "timestamp_ist": "2026-11-12 17:58 IST"
+        "timestamp_ist": "2026-11-13 11:35 IST"
     },
     "signals": [
         {
-            "ticker": "TCS",
-            "spot": 2433.0,
-            "direction": "BULLISH",
-            "contract": "2400 CE",
-            "confidence": 56.3,
-            "option_entry": 39.0,
-            "option_target": 42.9,
-            "option_stop": 33.2,
-            "lot_size": 175,
+            "ticker": "ICICIBANK",
+            "spot": 1570.1,
+            "direction": "BEARISH",
+            "contract": "1550 PE",
+            "confidence": 54.1,
+            "option_entry": 2.0,
+            "option_target": 2.2,
+            "option_stop": 1.7,
+            "lot_size": 700,
             "execution_plan": {
-                "required_lots": 4,
-                "required_qty": 700,
-                "capital_required": 27307.58,
-                "gross_profit": 2730.76,
-                "total_taxes_fees": 116.85,
-                "net_profit": 2613.91
-            }
-        },
-        {
-            "ticker": "INFY",
-            "spot": 1149.6,
-            "direction": "BULLISH",
-            "contract": "1150 CE",
-            "confidence": 54.3,
-            "option_entry": 7.9,
-            "option_target": 8.7,
-            "option_stop": 6.8,
-            "lot_size": 400,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 2800,
-                "capital_required": 22245.38,
-                "gross_profit": 2224.54,
-                "total_taxes_fees": 103.94,
-                "net_profit": 2120.6
+                "required_lots": 16,
+                "required_qty": 11200,
+                "capital_required": 22400.0,
+                "gross_profit": 2240.0,
+                "total_taxes_fees": 104.33,
+                "net_profit": 2135.67
             }
         }
     ]
