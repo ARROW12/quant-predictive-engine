@@ -1,6 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-11-19 12:19 IST"
+        "timestamp_ist": "2026-11-19 18:54 IST"
     },
     "signals": [
         {
@@ -8,7 +8,7 @@
             "spot": 301.2,
             "direction": "BULLISH",
             "contract": "300 CE",
-            "confidence": 58.3,
+            "confidence": 59.2,
             "option_entry": 2.7,
             "option_target": 3.0,
             "option_stop": 2.3,
