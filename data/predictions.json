@@ -1,26 +1,6 @@
 {
     "meta": {
-        "timestamp_ist": "2026-11-26 19:27 IST"
+        "timestamp_ist": "2026-11-27 13:08 IST"
     },
-    "signals": [
-        {
-            "ticker": "HDFCBANK",
-            "spot": 861.45,
-            "direction": "BEARISH",
-            "contract": "860 PE",
-            "confidence": 55.3,
-            "option_entry": 5.8,
-            "option_target": 6.3,
-            "option_stop": 4.9,
-            "lot_size": 550,
-            "execution_plan": {
-                "required_lots": 7,
-                "required_qty": 3850,
-                "capital_required": 22209.56,
-                "gross_profit": 2220.96,
-                "total_taxes_fees": 103.85,
-                "net_profit": 2117.11
-            }
-        }
-    ]
+    "signals": []
 }
